@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<add key="src" value="application/Plugin/languageList/service/list.aspx"></add>
+	<add key="size" value="1"></add>
+	<add key="width" value="600px"></add>
+	<add key="height" value="400px"></add>
+</applicationConfig>

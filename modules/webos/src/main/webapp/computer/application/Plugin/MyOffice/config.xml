@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<add key="src" value="application/Plugin/browser/service/index.html#url=http%3A%2F%2F192.168.1.158%3A88%2Fadmin%2Flogon.aspx"></add>
+	<add key="size" value="1"></add>
+	<add key="bodyBG" value=""></add>
+	<add key="width" value="1024px"></add>
+	<add key="height" value="600px"></add>
+</applicationConfig>

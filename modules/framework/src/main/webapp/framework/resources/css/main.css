@@ -1,0 +1,108 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
+	{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #fff;
+	color: #069;
+	font-size: 12px;
+	font-family: helvetica, arial, sans-serif, "宋体";
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+p {
+	line-height: 18px;
+}
+
+fieldset,img {
+	border: 0
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style: normal;
+	font-weight: normal
+}
+
+ol,ul {
+	list-style: none
+}
+
+caption,th {
+	text-align: left
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+div {
+	margin: 0 auto;
+}
+
+a {
+	color: #069;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #069;
+	text-decoration: underline;
+}
+
+img {
+	vertical-align: top;
+	border: 0;
+}
+
+q:before,q:after {
+	content: ''
+}
+
+abbr,acronym {
+	border: 0
+}
+
+.ui-tabs .ui-tabs-panel {
+    display: block;
+    border-width: 0;
+    padding: 2px;
+    background: none;
+}
+
+.searchbox{width:200px;}
+.searchbox-text{width:180px;}
+
+.topmenu{
+	background:#eee url('images/btn.jpg') repeat-x;
+	padding:2px 5px;
+}
+.toptitle{
+	position:absolute;
+	top:5px;
+	left:5px;
+	color:#fff;
+	font-size:16px;
+	font-weight:bold;
+	padding:5px;
+}
+
+.toolbar{
+	border: 1px #ebeced solid;
+	padding:4px;
+	background-color: #D8D8D8;
+}
+.toolbar div{
+	float: right;
+}
+.toolbar input{
+	width: 120px;
+	height: 24px;
+	margin: 0 10px 0 0;
+}

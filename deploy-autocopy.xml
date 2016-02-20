@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<!--开发时候使用,实现自动拷贝功能-->
+<project name="deploy-autocopy" default="autocopy" basedir=".">
+	<target name="autocopy">
+		<!--<jar basedir="${basedir}/modules/webservice/target/classes" destfile="${basedir}/modules/webservice/src/main/webapp/WEB-INF/services/smartdp-webservice-1.0.0-SNAPSHOT.aar"></jar>-->
+		<copy todir="${basedir}/target/WEB-INF/classes">
+			<fileset dir="${basedir}/modules/app/wechat/target/classes"></fileset>
+			<fileset dir="${basedir}/modules/app/weixin/target/classes"></fileset>
+			<fileset dir="${basedir}/modules/tools/lifeQuery/target/classes"></fileset>
+			<fileset dir="${basedir}/modules/tools/sae/target/classes"></fileset>
+			<fileset dir="${basedir}/modules/app/cms/target/classes"></fileset>
+			<!--<fileset dir="${basedir}/modules/app/album/target/classes"></fileset>-->
+			<!--<fileset dir="${basedir}/modules/app/calendar/target/classes"></fileset>-->
+			<fileset dir="${basedir}/modules/app/chat/target/classes"></fileset>
+			<!--<fileset dir="${basedir}/modules/app/report/target/classes"></fileset>-->
+			<!--<fileset dir="${basedir}/modules/app/weixin/target/classes"></fileset>-->
+			<fileset dir="${basedir}/modules/platform/target/classes"></fileset>
+			<fileset dir="${basedir}/modules/webos/target/classes"></fileset>
+			<fileset dir="${basedir}/modules/security/target/classes"></fileset>
+			<fileset dir="${basedir}/modules/framework/target/classes"></fileset>
+			<fileset dir="${basedir}/modules/core/target/classes"></fileset>
+			<fileset dir="${basedir}/modules/rest/target/classes"></fileset>
+		</copy>
+		<!--
+		<copy todir="${basedir}/target/template/wap">
+			<fileset dir="${basedir}/modules/template/wap"></fileset>
+		</copy>	
+		-->
+		<copy todir="${basedir}/target/template/wx">
+			<fileset dir="${basedir}/modules/template/wx"></fileset>
+		</copy>	
+		<copy todir="${basedir}/target/webos">
+			<fileset dir="${basedir}/modules/webos/src/main/webapp/mobile"></fileset>
+		</copy>	
+		<copy todir="${basedir}/target/component/cms">
+			<fileset dir="${basedir}/modules/app/cms/src/main/webapp"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/chat">
+			<fileset dir="${basedir}/modules/app/chat/src/main/webapp"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/wechat">
+			<fileset dir="${basedir}/modules/app/wechat/src/main/webapp"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/platform">
+			<fileset dir="${basedir}/modules/platform/src/main/webapp"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/security">
+			<fileset dir="${basedir}/modules/security/src/main/webapp"></fileset>
+		</copy>
+		<copy todir="${basedir}/target">
+			<fileset dir="${basedir}/modules/framework/src/main/webapp">
+				<exclude name="framework/icon/"/>
+				<exclude name="framework/page/"/>
+				<exclude name="framework/plugin/accordion/"/>
+				<exclude name="framework/plugin/artDiglog/"/>
+				<exclude name="framework/plugin/bootstrap/"/>
+				<exclude name="framework/plugin/carousel/"/>
+				<exclude name="framework/plugin/cityselect/"/>
+				<exclude name="framework/plugin/CodeMirror/"/>
+				<exclude name="framework/plugin/datatables/"/>
+				<exclude name="framework/plugin/Flexpaper/"/>
+				<exclude name="framework/plugin/Highcharts-2.2.5/"/>
+				<exclude name="framework/plugin/iColorPicker/"/>
+				<exclude name="framework/plugin/iviewer/"/>
+				<exclude name="framework/plugin/jquery-ui/"/>
+				<exclude name="framework/plugin/jqzoom/"/>
+				<exclude name="framework/plugin/lhgDialog/"/>
+				<exclude name="framework/plugin/lodop/"/>
+				<exclude name="framework/plugin/login/"/>
+				<exclude name="framework/plugin/OpenLayers-2.11/"/>
+				<exclude name="framework/plugin/smallslider/"/>
+				<exclude name="framework/plugin/SyntaxHighlighter/"/>
+				<exclude name="framework/plugin/easyui/"/>
+				<exclude name="framework/plugin/jquery-plugs/"/>
+				<exclude name="framework/plugin/My97DatePicker/"/>
+				<exclude name="framework/plugin/uploadify/"/>
+				<exclude name="framework/plugin/jquery/jquery-autocomplete/"/>
+				<exclude name="framework/plugin/jquery/jquery-1.8.0.min.js"/>
+				<exclude name="framework/plugin/jquery/jquery-1.8.3.js"/>
+			</fileset>
+		</copy>
+		<copy todir="${basedir}/target/framework/icon/wap">
+			<fileset dir="${basedir}/modules/framework/src/main/webapp/framework/icon/wap/"/>
+		</copy>
+		<copy todir="${basedir}/target/framework/plugin/easyui">
+			<fileset dir="${basedir}/modules/framework/src/main/webapp/framework/plugin/easyui">
+				<include name="jquery.easyui.min.1.3.2.js"/>
+				<include name="locale/"/>
+				<include name="themes/icon.css"/>
+				<include name="themes/default/"/>
+			</fileset>
+		</copy>
+		<!--
+		<copy todir="${basedir}/target/component/webos/java">
+			<fileset dir="${basedir}/modules/webos/target/classes"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/platform/java">
+			<fileset dir="${basedir}/modules/platform/target/classes"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/im/java">
+			<fileset dir="${basedir}/modules/app/sns/im/target/classes"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/security/java">
+			<fileset dir="${basedir}/modules/security/target/classes"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/keyboard">
+			<fileset dir="${basedir}/modules/app/keyboard"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/flowbuilder">
+			<fileset dir="${basedir}/modules/app/flowbuilder"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/processDesigner">
+			<fileset dir="${basedir}/modules/app/processDesigner"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/apidocs">
+			<fileset dir="${basedir}/modules/tools/apidocs"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/codetools">
+			<fileset dir="${basedir}/modules/tools/codetools"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/supermary">
+			<fileset dir="${basedir}/modules/app/game/supermary"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/renju">
+			<fileset dir="${basedir}/modules/app/game/renju"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/llk">
+			<fileset dir="${basedir}/modules/app/game/llk"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/donkeyjump">
+			<fileset dir="${basedir}/modules/app/game/donkeyjump"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/FlappyBird">
+			<fileset dir="${basedir}/modules/app/game/FlappyBird"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/calculator">
+			<fileset dir="${basedir}/modules/app/calculator"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/clock">
+			<fileset dir="${basedir}/modules/app/clock"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/percalendar">
+			<fileset dir="${basedir}/modules/app/percalendar"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/site">
+			<fileset dir="${basedir}/modules/app/site"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/album">
+			<fileset dir="${basedir}/modules/app/album/src/main/webapp"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/calendar">
+			<fileset dir="${basedir}/modules/app/calendar/src/main/webapp"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/report">
+			<fileset dir="${basedir}/modules/app/report/src/main/webapp"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/weixin">
+			<fileset dir="${basedir}/modules/app/weixin/src/main/webapp"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/component/webos">
+			<fileset dir="${basedir}/modules/webos/src/main/webapp"></fileset>
+		</copy>
+		-->
+	</target>
+</project>

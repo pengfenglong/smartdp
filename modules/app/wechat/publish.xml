@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="publish" default="publish" basedir=".">
+	<target name="publish">
+		<delete file="${basedir}/target/weixinext.war" />
+		<delete file="${basedir}/target/smartdp-wechat-1.0/WEB-INF/lib/smartdp-lifeQuery-1.0.jar" />
+		<copy todir="${basedir}/target/smartdp-wechat-1.0/WEB-INF/classes">
+			<fileset dir="${basedir}/../../tools/lifeQuery/target/classes"></fileset>
+		</copy>
+		<copy todir="${basedir}/target/smartdp-wechat-1.0/wap">
+			<fileset dir="${basedir}/../../template/wap"></fileset>
+		</copy>
+		<war warfile="${basedir}/target/weixinext.war">
+			<fileset dir="${basedir}/target/smartdp-wechat-1.0/">
+			</fileset>
+		</war>
+	</target>
+</project>

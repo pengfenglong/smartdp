@@ -1,0 +1,8 @@
+<config>
+	<loadpoint>
+		com.smartdp.core.web.loadpoint.ComponentClassLoadPoint,
+		com.smartdp.core.web.loadpoint.PropertiesLoadPoint,
+		com.smartdp.core.web.loadpoint.InternationalizationLoadPoint,
+		com.smartdp.platform.loadpoint.PlatformLoadPoint
+	</loadpoint>
+</config>

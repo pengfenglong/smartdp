@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<add key="src" value="/PublicClass/jPlugin/plugin/UploadFileTemplate/index.html"></add>
+	<add key="size" value="1"></add>
+	<add key="width" value="1024px"></add>
+	<add key="height" value="600px"></add>
+</applicationConfig>

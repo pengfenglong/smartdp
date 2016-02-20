@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xmlData>
+	<PluginMenu>
+	    <add key="index" name="首页">
+	   	    <add key="hotApp" name="热门应用"></add>
+	    	<add key="newApp" name="最新应用"></add>
+	   	    <add key="riseApp" name="上升最快"></add>
+	    </add>
+		<add></add>
+		<add key="allApp" name="全部应用">
+			<add key="amusement" name="娱乐"></add>
+			<add key="game" name="游戏"></add>
+			<add key="life" name="生活"></add>
+			<add key="music" name="音乐"></add>
+			<add key="news" name="新闻"></add>
+			<add key="office" name="办公"></add>
+			<add key="sns" name="社交"></add>
+			<add key="sys" name="系统"></add>
+			<add key="tools" name="工具"></add>
+			<add key="website" name="网站"></add>
+		</add>
+	</PluginMenu>
+</xmlData>

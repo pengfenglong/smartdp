@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.smartdp.platform.model">
+		<class name="User" table="platform_user">
+		<cache usage="read-write"/>
+		<id name="userId" column="USER_ID" type="java.lang.Long">
+			<generator class="increment" />
+		</id>
+
+		<property name="userCode" column="USER_CODE" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<property name="userName" column="USER_NAME" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<property name="userPassword" column="USER_PASSWORD" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<property name="userGender" column="USER_GENDER" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="2" />
+
+		<property name="userPosition" column="USER_POSITION" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="30" />
+
+		<property name="userPhotoUrl" column="USER_PHOTO_URL" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="200" />
+
+		<property name="userQq" column="USER_QQ" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<property name="userMsn" column="USER_MSN" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<property name="userMobile" column="USER_MOBILE" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<property name="userMobile2" column="USER_MOBILE2" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<property name="userOfficeTel" column="USER_OFFICE_TEL"
+			update="true" insert="true" type="java.lang.String" not-null="false"
+			unique="false" length="20" />
+
+		<property name="userAddress" column="USER_ADDRESS" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="100" />
+
+		<property name="userFamilyTel" column="USER_FAMILY_TEL"
+			update="true" insert="true" type="java.lang.String" not-null="false"
+			unique="false" length="20" />
+
+		<property name="userEmail" column="USER_EMAIL" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="30" />
+
+		<property name="userAvidate" column="USER_AVIDATE" update="true"
+			insert="true" type="java.sql.Date" not-null="false" unique="false"
+			length="10" />
+
+		<property name="userIsAgent" column="USER_IS_AGENT" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="2" />
+
+		<property name="userBelongtoOrg" column="USER_BELONGTO_ORG"
+			update="true" insert="true" type="java.lang.Long" not-null="false"
+			unique="false" length="19" />
+
+		<property name="memo" column="MEMO" update="true" insert="true"
+			type="java.lang.String" not-null="false" unique="false" length="100" />
+
+		<property name="status" column="STATUS" update="true" insert="true"
+			type="java.lang.String" not-null="true" unique="false" length="15" />
+
+		<property name="creator" column="CREATOR" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="15" />
+
+		<property name="createDate" column="CREATE_DATE" update="true"
+			insert="true" type="java.sql.Timestamp" not-null="true" unique="false"
+			length="19" />
+
+		<property name="userNamePy" column="USER_NAME_PY" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<set name="groups" table="platform_group_user_ref" lazy="false" inverse="false"
+			cascade="save-update">
+			<key column="USER_ID" />
+			<many-to-many column="GROUP_ID" class="com.smartdp.platform.model.Group" />
+		</set>
+		
+		<set name="roles" table="platform_role_user_ref" lazy="false" inverse="false"
+			cascade="save-update">
+			<key column="USER_ID" />
+			<many-to-many column="ROLE_ID" class="com.smartdp.platform.model.Role" />
+		</set>
+
+	</class>
+</hibernate-mapping>
+

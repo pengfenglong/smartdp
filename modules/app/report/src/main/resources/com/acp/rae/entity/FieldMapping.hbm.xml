@@ -1,0 +1,17 @@
+<?xml version="1.0"?> 
+<!DOCTYPE hibernate-mapping PUBLIC 
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.acp.rae.entity.FieldMapping" table="T_ACP_RAE_FIELDMAPPING">
+		<id name="id">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="fieldName" column="fieldname" type="java.lang.String"></property>
+		<property name="fieldAlias" column="fieldalias" type="java.lang.String"></property>
+		<property name="fieldType" column="fieldtype" type="java.lang.String"></property>
+		<property name="isParameter" column="isparameter" type="java.lang.Boolean"></property>
+		<property name="order" column="fieldorder" type="java.lang.Integer"></property>
+		<many-to-one name="dataService"  column="dataserviceid"  class="com.acp.rae.entity.DataService"/>
+	</class>
+</hibernate-mapping>

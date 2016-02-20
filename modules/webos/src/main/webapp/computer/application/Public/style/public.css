@@ -1,0 +1,52 @@
+﻿/*
+ * public.css
+ * name:xiaojia
+ * email:iatt@qq.com
+ * qq:273142650
+ * time:2012.6.15 10:26
+*/
+@charset "utf-8";
+/***-------------------------------------------------------------------***/
+body{font-family:"微软雅黑","宋体";font-size:12px;margin:0;background:#f0f0f0;}
+input{outline:none;font-family:"微软雅黑", "宋体";_line-height:23px;*line-height:25px;*vertical-align:middle;margin:0;padding:0;}
+button{font-family:"微软雅黑", "宋体";*vertical-align:middle;}
+textarea{outline:none;resize:none;outline:none;font-family:"微软雅黑", "宋体";font-size:12px;padding:0;margin:0;}
+form,ol,ul,li{list-style-type:none;text-decoration:none;font-size:12px;font-weight:100;font-style:normal;margin:0;padding:0;}
+a{color:#D7D7D7;text-decoration:none;outline:none;}
+img{border:none;}
+#model-main{margin:0 auto;display:table;}
+/***-------------------------------------------------------------------***/
+.table-list,.table-subject{width:100%;float:left;table-layout:fixed;margin:0;border-collapse:collapse;}
+.table-list tr td{padding:5px;text-align:center;height:25px;line-height:25px;overflow:hidden;text-overflow:ellipsis;word-break:keep-all;white-space:nowrap;}
+.table-list .table-title-head td{font-weight:bold;font-size:14px;border-bottom:solid 1px #ddd;}
+.table-list .table-title-list:hover td{background:#dedede;}
+.table-list a{color:#73a02b;font-weight:bold;}
+.table-list a:hover{color:#000;font-weight:bold;}
+.table-list-oper-m,.table-list-oper-d,.table-list-oper-p{width:16px;height:16px;display:inline-block;cursor:pointer;margin:0 5px;background:url(images/icons/pencil.gif) no-repeat center;zoom:1;*display:inline;}
+.table-list-oper-d{background-image:url(images/icons/cross.gif);}
+.table-list-oper-p{background-image:url(images/icons/plus.gif);}
+.table-list-oper-d-wait{background-image:url(images/loading.gif);}
+.table-subject{margin-top:5px;}
+.table-subject tr td{padding:5px;height:25px;line-height:25px;overflow:hidden;}
+
+.table-subject-table{width:100%;border:0;margin:0;border-collapse:collapse;}
+.table-subject-table tr{padding:0;}
+.table-subject-table tr td{padding:0;margin:0;}
+/***-------------------------------------------------------------------***/
+.subject{width:100%;height:35px;font-size:16px;color:#666;text-align:center;border:dotted 1px #666;*line-height:35px;}
+.subject:hover{border:solid 1px #d5d5d5;border-top-color:#333;border-left-color:#333;background:#fbfbfb;}
+.content{width:100%;height:295px;line-height:150%;border:solid 1px #cbcbcb;}
+.submit,.button,.submit-ash{height:26px;padding:0 20px;*padding:1px 10px;margin:2px;line-height:normal;background:url(images/bg-button-green.gif) #459300;text-align:center;border:1px solid #459300;*border-color:transparent;*vertical-align:middle;cursor:pointer;color:#FFF;}
+.submit:active{background:#61a700;}
+.button:active{background:#61a700;}
+.submit-ash{background:url(images/bg-button-green-ash.gif);cursor:default;border-color:#333;}
+.select{position:absolute;right:5px;bottom:5px;}
+/***-------------------------------------------------------------------***/
+.left{margin-left:0;}
+.right{margin-right:0;}
+.relative{position:relative;}
+.subtitle{border:solid 1px #cbcbcb;padding:5px;background:#fff;}
+.subtitle textarea{border:none;height:80px;width:100%;overflow:hidden;line-height:150%;}
+
+.head-canvas{width:90px;height:90px;border:solid 1px #cbcbcb;}
+.head-canvas img{width:100%;height:100%;border:none;cursor:pointer;}

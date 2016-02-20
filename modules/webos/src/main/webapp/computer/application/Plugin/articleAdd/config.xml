@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<add key="src" value="application/Plugin/articleAdd/service/content.aspx"></add>
+	<add key="size" value="1"></add>
+	<add key="width" value="900px"></add>
+	<add key="height" value="550px"></add>
+</applicationConfig>

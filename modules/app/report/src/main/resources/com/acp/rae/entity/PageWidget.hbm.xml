@@ -1,0 +1,17 @@
+<?xml version="1.0"?> 
+<!DOCTYPE hibernate-mapping PUBLIC 
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.acp.rae.entity.PageWidget" table="T_ACP_RAE_PAGE_WIDGET">
+		<id name="widgetId" column="widget_id">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="widgetIndex" column="widget_index" type="java.lang.Integer"></property>
+		<property name="widgetWidth" column="widget_width" type="java.lang.String"></property>
+		<property name="widgetHeight" column="widget_height" type="java.lang.String"></property>
+		<property name="attrAndValueJson" column="attr_value_json" type="org.springframework.orm.hibernate3.support.ClobStringType"></property>
+		<many-to-one name="pageInfo"  column="page_id"  lazy="false" class="com.acp.rae.entity.PageInfo"/>
+		<property name="pageId" column="page_id" type="java.lang.String" insert="false" update="false"></property>
+	</class>
+</hibernate-mapping>

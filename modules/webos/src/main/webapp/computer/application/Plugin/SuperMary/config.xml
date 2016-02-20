@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<add key="src" value="application/Plugin/SuperMary/index.html"></add>
+	<add key="size" value="0"></add>
+	<add key="width" value="514px"></add>
+	<add key="height" value="507px"></add>
+</applicationConfig>

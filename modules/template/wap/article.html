@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)http://weixapp.com/weixin/index.php?app=articles&id=339#mp.weixin.qq.com -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport"
+	content="width=device-width,minimum-scale=1,user-scalable=no,maximum-scale=1,initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title></title>
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<script src="./js/tools.js" type="text/javascript"></script>
+<link rel="stylesheet" href="./css/site.css">
+</head>
+<body screen_capture_injected="true">
+	<div id="page">
+		<div id="header" class="bgcolor">
+			<a id="return" class="left" href="javascript:history.go(-1);"></a> <span
+				class="title"><a
+				href="http://weixapp.com/weixin/index.php?app=store&id=5#mp.weixin.qq.com"
+				style="color: #fff;"></a></span> <a id="menu" href="./index.html?site=1"
+				class="right"><img src="./image/list.png"></a>
+		</div>
+		<div id="container">
+
+			<h1 id="title"></h1>
+			<div class="article-time" id="createdate"></div>
+			<div class="article-content">
+				<p  id="content"></p>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+<script>
+	var site = $.getUrlParam('site');
+	var channel = $.getUrlParam('channel');
+	var article = $.getUrlParam('article');
+	var contextPath = $.getContextPath();
+	$.ajax({
+		//url:contextPath+'/cmsdata/'+site+'/articles-'+channel+'.json',
+		url : contextPath + '/api/cms/get_article.action?articleId=' + article,
+		success : function(data) {
+			$('#title').html(data.title);
+			var createDate = new Date(data.createDate);
+			//$('#createdate').html(createDate.getFullYear()+'-'+(createDate.getMonth()+1)+'-'+createDate.getDate());
+			$('#createdate').html(createDate.toLocaleString());
+			$('#content').html(data.content);
+		}
+	});
+</script>
+</html>

@@ -1,0 +1,13 @@
+*{margin:0px;padding:0px;border:0px;}
+div.column{float:left;overflow:hidden;position:absolute}
+div.replace{position:absolute}
+#toolbar input{width:120px;height:40px;} 
+
+#gameMap{
+
+margin:10px;
+border-color:#000000;
+border-style:dotted;
+border-width:1px;
+
+}

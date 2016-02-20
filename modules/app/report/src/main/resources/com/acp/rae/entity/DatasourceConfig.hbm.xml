@@ -1,0 +1,15 @@
+<?xml version="1.0"?> 
+<!DOCTYPE hibernate-mapping PUBLIC 
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.acp.rae.entity.DatasourceConfig" table="T_ACP_RAE_DATASOURCECONFIG">
+		<id name="id">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="name" column="name" type="java.lang.String"></property>
+		<property name="dsType" column="dstype" type="java.lang.Integer"></property>
+		<property name="dsProperties" column="dsproperties" type="java.lang.String"></property>
+		<property name="propertyRegex" column="propertyregex" type="java.lang.String"></property>
+	</class>
+</hibernate-mapping>

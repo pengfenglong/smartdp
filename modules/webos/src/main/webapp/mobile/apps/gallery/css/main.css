@@ -1,0 +1,8 @@
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "ÐÂËÎÌå";}
+/* gallery */
+.gallery{width:100%;margin:10px;}
+.gallery li{display:block;float:left;height:100px;margin-bottom:6px;margin-right:6px;width:100px;}
+.gallery li a{height:100px;width:100px;}
+.gallery li a img{max-width:100px;}

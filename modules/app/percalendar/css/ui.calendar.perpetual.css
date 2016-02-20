@@ -1,0 +1,155 @@
+@CHARSET "UTF-8";
+html{
+	overflow-x: hidden;
+	overflow-y:auto;
+}
+.cal_0_4_folder_div{
+	width:100%;
+	height:100%;
+	margin:0px auto;
+	background:#fff;
+	position:relative;
+	border:2px dashed #ccc;
+}
+.cal_0_4_info_div{
+	position:absolute;
+	top:3px;
+	left:3px;
+	z-index:9999;
+}
+.cal_0_4_outter_div{
+	position:absolute;
+	width:100%;
+	height:98%;
+	top:1%;
+	left:0%;
+}
+.cal_0_4_outter_left_div{
+	text-align:center;
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0%;
+	left:0%;
+}
+.cal_0_4_outter_right_div{
+	text-align:center;
+	position:absolute;
+	width:12%;
+	height:100%;
+	top:0%;
+	left:88%;
+	display:none;
+}
+.cal_0_4_button{
+	width:80%;
+	white-space:nowrap;
+	text-align:center;
+}
+.cal_0_4_inner_div{
+	width:100%;
+	height:100%;
+	font-family:Times New Roman;
+	position:relative;
+}
+.cal_0_4_inner_select{
+	height:60%;
+	font-size:80%;
+}
+.cal_0_4_inner_div_row0{
+	position:absolute;
+	left:1%;
+	top:0%;
+	width:98%;
+	height:8%;
+	text-align:center;
+	background-color:#0099FF;
+}
+.cal_0_4_inner_div_row0_spliter{
+	position:absolute;
+	left:0%;
+	width:100%;
+	bottom:0px;
+	height:1px;
+	background-color:#FFFFFF;
+}
+.cal_0_4_inner_div_row0_span1{
+	font-size:50%;
+	color:#ffffff;
+}
+.cal_0_4_inner_div_row0_span2{
+	color:#fff;
+	font-size:75%;
+	font-family:Times New Roman;
+}
+.cal_0_4_inner_div_row1{
+	position:absolute;
+	left:0%;
+	top:8%;
+	width:100%;
+	height:8%;
+	font:75% '宋体';
+	font-weight:bold;
+	text-align:center;
+}
+.cal_0_4_inner_inner_div_row1_cell{
+	position:absolute;
+	top:0%;
+	height:100%;
+	width:14%;
+	color:#333;
+	line-height:100%;
+	background:#A8E1FD;
+}
+.cal_0_4_inner_inner_div_row1_cell_spliter{
+	position:absolute;
+	top:0%;
+	height:100%;
+	right:0px;
+	width:1px;
+	background:#FFFFFF;
+}
+.cal_0_4_inner_inner_div_row1_cell_0_6{
+	position:absolute;
+	top:0%;
+	height:100%;
+	width:14%;
+	color:red;
+	line-height:100%;
+	background:#A8E1FD;
+}
+.cal_0_4_inner_div_row_n{
+	position:absolute;
+	left:0%;
+	width:100%;
+	height:14%;
+}
+.cal_0_4_inner_div_row_n_cell{
+	position:absolute;
+	top:0%;
+	height:100%;
+	width:14%;
+}
+.cal_0_4_inner_td_msover{
+	background-color: rgb(210, 255, 245);
+}
+.cal_0_4_inner_td_today{
+	color: red;
+	margin-left: -1px;
+	margin-top: -1px;
+	border: 1px dotted blue;
+}
+.cal_0_4_inner_upper_span{
+	font-size:100%;
+}
+.cal_0_4_inner_lowwer_div{
+	font-size:50%;
+}
+.cal_0_4_div_nowrap{
+	overflow:hidden;
+    white-space:nowrap;
+	text-overflow:ellipsis;
+}
+/*主题颜色
+#0FF=今日颜色;
+#0099FF=日历主题颜色;*/

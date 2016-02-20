@@ -1,0 +1,4242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>easyuitag</short-name>
+	<uri>/easyui-tag</uri>
+	<display-name>easyuitag</display-name>
+	<description><![CDATA[easyuitag.]]></description>
+	<tag>
+		<name>panel</name>
+		<tag-class>com.smartdp.tag.easyui.PanelTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>panel</display-name>
+		<description><![CDATA[控制面板。方法[名称:参数:描述]:options:none:返回选项属性。;panel:none:返回控制面板对象。;header:none:返回控制面板头对象。;body:none:返回控制面板主体对象。;setTitle:title:设置控制面板头部的标题文本。;open:forceOpen:当参数forceOpen设置为true时，控制面板将被打开，不受onBeforeOpen回调函数的约束。;close:forceClose:当参数forceClose设置为true时, 控制面板将被打开，不受onBeforeClose回调函数的约束。;destroy:forceDestroy:当参数forceDestroy设置为true时,控制面板将被打开，不受onBeforeDestroy回调函数的约束。;refresh:href:当href属性被设置时，刷新控制面板以载入远程数据。;resize:options:这是控制面板的尺寸并且进行布局。options对象包含以下2个属性: width： 新的控制面板宽度 height： 新的控制面板高度 left： 新的控制面板左边距 top： 新的控制面板顶边距;move:options:移动控制面板到一个新的位置。options对象包含以下2个属性: left： 新的控制面板左边距 top： 新的控制面板顶边距;maximize:none:使控制面板铺满整个容器。;minimize:none:最小化控制面板。;restore:none:使最大化的控制面板重置为其初始化时的大小和位置。;collapse:animate:折叠控制面板主体。;expand:animate:扩展控制面板主体。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:标题; 类型:string（字符串）; 默认值:null; 描述:显示在控制面板顶部的标题文本。]]></description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:图标CSS类; 类型:string（字符串）; 默认值:null; 描述:在控制面板标题前显示一个16x16大小图标的CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:高度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>left</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:左边距; 类型:number（数字）; 默认值:null; 描述:设置控制面板的左边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>top</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:顶边距; 类型:number（数字）; 默认值:null; 描述:设置控制面板的顶边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:类; 类型:string（字符串）; 默认值:null; 描述:对控制面板引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>headerCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:头部css类; 类型:string（字符串）; 默认值:null; 描述:对控制面板头部引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>bodyCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:主体类; 类型:string（字符串）; 默认值:null; 描述:对控制面板主体引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:样式; 类型:object（对象）; 默认值:{}; 描述:给控制面板添加一个自定义的样式。]]></description>
+		</attribute>
+		<attribute>
+			<name>fit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:铺满浏览器; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true时，控制面板的大小将铺满它所在的容器（浏览器）。]]></description>
+		</attribute>
+		<attribute>
+			<name>border</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:边框; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示控制面板边框。]]></description>
+		</attribute>
+		<attribute>
+			<name>doSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:调整大小; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，在控制面板被创建时将被重置大小并且自动布局。]]></description>
+		</attribute>
+		<attribute>
+			<name>noheader</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:无头部; 类型:boolean（布尔型）; 默认值:false; 描述:如果设置为true，控制面板头部将不被创建。]]></description>
+		</attribute>
+		<attribute>
+			<name>content</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:内容; 类型:string（字符串）; 默认值:null; 描述:控制面板主体的内容。]]></description>
+		</attribute>
+		<attribute>
+			<name>collapsible</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可折叠; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示可折叠按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最小化; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示最小化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>maximizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最大化; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示最大化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>closable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:关闭; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示关闭按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>tools</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:工具栏; 类型:array（数组）; 默认值:[]; 描述:自定义工具栏，每一个工具都可以包含2个属性：图标类 和句柄。]]></description>
+		</attribute>
+		<attribute>
+			<name>collapsed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已折叠; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否折叠。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已最小化; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否最小化。]]></description>
+		</attribute>
+		<attribute>
+			<name>maximized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已最大化; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否最大化。]]></description>
+		</attribute>
+		<attribute>
+			<name>closed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已关闭; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:超链接; 类型:string（字符串）; 默认值:null; 描述:载入远程数据的超链接，载入的数据将显示在控制面板中。]]></description>
+		</attribute>
+		<attribute>
+			<name>cache</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:缓存; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，从超链接载入的数据将被缓存。]]></description>
+		</attribute>
+		<attribute>
+			<name>loadingMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:载入时信息; 类型:string（字符串）; 默认值:Loading…; 描述:在正在载入远程数据时显示在控制面板中的信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>extractor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:提取器; 类型:function（函数）; 默认值:; 描述:定义如何从ajax返回值中提取内容,返回被提取的数据。 
+
+extractor: function(data){
+
+				var pattern = /<body[^>]*>((.|[\n\r])*)<\/body>/im;
+
+				var matches = pattern.exec(data);
+
+				if (matches){
+
+					return matches[1];	// only extract body content
+
+				} else {
+
+					return data;
+
+				}
+
+}
+			]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoad</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoad; 参数:none; 描述:在远程数据被载入时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeOpen; 参数:none; 描述:在控制面板被打开之前触发，返回false将停止打开。]]></description>
+		</attribute>
+		<attribute>
+			<name>onOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onOpen; 参数:none; 描述:在控制面板被打开之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeClose; 参数:none; 描述:在控制面板被关闭之前触发，返回false将取消关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>onClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onClose; 参数:none; 描述:在控制面板被关闭后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeDestroy; 参数:none; 描述:在控制面板被注销前触发，返回false将取消注销。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDestroy; 参数:none; 描述:在控制面板被注销后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeCollapse; 参数:none; 描述:在控制面板被折叠之前触发，返回false将停止折叠。]]></description>
+		</attribute>
+		<attribute>
+			<name>onCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onCollapse; 参数:none; 描述:在控制面板被折叠之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeExpand; 参数:none; 描述:在控制面板被扩展之前触发，返回false将停止扩展（这里应该是指扩展区域，宽、高等）。]]></description>
+		</attribute>
+		<attribute>
+			<name>onExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onExpand; 参数:none; 描述:在控制面板被扩展之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onResize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onResize; 参数:width, height; 描述:在控制面板被缩放后触发。 width： 新的控制面板宽度 height：新的控制面板高度]]></description>
+		</attribute>
+		<attribute>
+			<name>onMove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMove; 参数:left,top; 描述:在控制面板被移动后触发。 left：新的控制面板左边距 top：新的控制面板顶边距]]></description>
+		</attribute>
+		<attribute>
+			<name>onMaximize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMaximize; 参数:none; 描述:在控制面板被最大化后触发]]></description>
+		</attribute>
+		<attribute>
+			<name>onRestore</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onRestore; 参数:none; 描述:在控制面板被重置为初始大小后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onMinimize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMinimize; 参数:none; 描述:在控制面板被最小化后触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>droppable</name>
+		<tag-class>com.smartdp.tag.easyui.DroppableTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>droppable</display-name>
+		<description><![CDATA[拖动至容器]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>accept</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:accept; 类型:selector; 默认值:null; 描述:决定哪个可拖动元素将会被接收。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDragEnter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDragEnter; 参数:e,source; 描述:当可拖动元素被拖入目标容器的时候触发，参数source是被拖动的DOM元素。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDragOver</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDragOver; 参数:e,source; 描述:当可拖动元素被拖至某个元素之上的时候触发，参数source是被拖动的DOM元素。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDragLeave</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDragLeave; 参数:e,source; 描述:当可拖动元素被拖离目标容器的时候触发，参数source是被拖动的DOM元素。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDrop</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDrop; 参数:e,source; 描述:当可拖动元素被拖入目标容器并放置的时候触发，参数source是被拖动的DOM元素。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>combobox</name>
+		<tag-class>com.smartdp.tag.easyui.ComboboxTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>combobox</display-name>
+		<description><![CDATA[可装载组合框。方法[名称:参数:描述]:options:none:返回属性对象。;getData:none:返回已载入的数据。;loadData:data:载入本地数据列表。;reload:url:请求远程数据列表。;setValues:values:设置组合框的值，参数values是一个数组。;setValue:value:设置组合框的值。;clear:none:清除组合框的值。;select:value:选择特定的项目。;unselect:value:取消选择特定的项目。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>valueField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:值域; 类型:string（字符串）; 默认值:value; 描述:绑定到组合框下的数据的值域的名称。]]></description>
+		</attribute>
+		<attribute>
+			<name>textField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:文本域; 类型:string（字符串）; 默认值:text; 描述:绑定到组合框下数据的文本域的名称。]]></description>
+		</attribute>
+		<attribute>
+			<name>mode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:模式; 类型:string（字符串）; 默认值:local; 描述:定义当文本发生改变时，如何载入数据列表。如果组合框要从远程地址载入数据，设置为'remote'。]]></description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:超链接地址; 类型:string（字符串）; 默认值:null; 描述:可供载入数据列表的远程地址。]]></description>
+		</attribute>
+		<attribute>
+			<name>method</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:方法; 类型:string（字符串）; 默认值:post; 描述:获取数据的HTTP方法。]]></description>
+		</attribute>
+		<attribute>
+			<name>data</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:数据; 类型:array（数组）; 默认值:null; 描述:将被载入的数据列表。]]></description>
+		</attribute>
+		<attribute>
+			<name>filter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:过滤器; 类型:function（函数）; 默认值:; 描述:定义当模式设置为'local'时如何过滤本地数据，function有2个参数： q: 用户输入的文本。 row: 数据列表 返回true将允许显示数据列表。]]></description>
+		</attribute>
+		<attribute>
+			<name>formatter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:格式; 类型:function（函数）; 默认值:; 描述:定义如何返回数据，function有一个参数：row。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoadSuccess</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoadSuccess; 参数:none; 描述:当远程数据载入成功时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoadError</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoadError; 参数:none; 描述:当远程数据载入错误时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSelect; 参数:record; 描述:当用户选择一个列表项时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onUnselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onUnselect; 参数:record; 描述:当用户取消选择一个列表项时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>propertygrid</name>
+		<tag-class>com.smartdp.tag.easyui.PropertygridTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>propertygrid</display-name>
+		<description><![CDATA[属性表格]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>showGroup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:显示分组; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示属性分组。]]></description>
+		</attribute>
+		<attribute>
+			<name>groupField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:分组字段; 类型:string（字符串）; 默认值:group; 描述:定义要分组的字段名称。]]></description>
+		</attribute>
+		<attribute>
+			<name>groupFormatter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:分组格式; 类型:function（函数）; 默认值:; 描述:定义如何格式化分组中的值。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>menubutton</name>
+		<tag-class>com.smartdp.tag.easyui.MenubuttonTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>menubutton</display-name>
+		<description><![CDATA[菜单按钮]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>plain</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:简洁模式; 类型:boolean（布尔型）; 默认值:true; 描述:设置为true将显示简洁效果。]]></description>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:菜单; 类型:string（字符串）; 默认值:null; 描述:用来创建一个相应菜单的选择器。]]></description>
+		</attribute>
+		<attribute>
+			<name>duration</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:持续时间; 类型:number（数字）; 默认值:100; 描述:定义鼠标划过按钮时显示菜单所持续的时间，单位为毫秒。]]></description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:options; 参数:none; 描述:返回属性对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>disable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:disable; 参数:none; 描述:禁用菜单按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>enable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:enable; 参数:none; 描述:启用菜单按钮。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>combotree</name>
+		<tag-class>com.smartdp.tag.easyui.CombotreeTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>combotree</display-name>
+		<description><![CDATA[组合树]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>editable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可编辑; 类型:boolean（布尔型）; 默认值:false; 描述:定义用户是否可以直接输入。]]></description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:options; 参数:none; 描述:返回属性对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>tree</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:tree; 参数:none; 描述:返回树形菜单对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>loadData</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:loadData; 参数:data; 描述:载入本地树形菜单数据。]]></description>
+		</attribute>
+		<attribute>
+			<name>reload</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:reload; 参数:url; 描述:再次向远程树形菜单数据发起请求。]]></description>
+		</attribute>
+		<attribute>
+			<name>clear</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:clear; 参数:none; 描述:清除组件值。]]></description>
+		</attribute>
+		<attribute>
+			<name>setValues</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:setValues; 参数:values; 描述:设置组合框的值，参数values是一个数组。]]></description>
+		</attribute>
+		<attribute>
+			<name>setValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:setValue; 参数:value; 描述:设置组合框的值。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>messager</name>
+		<tag-class>com.smartdp.tag.easyui.MessagerTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>messager</display-name>
+		<description><![CDATA[消息窗口]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>ok</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:确认; 类型:string（字符串）; 默认值:Ok; 描述:显示在“确认”按钮上的文本。]]></description>
+		</attribute>
+		<attribute>
+			<name>cancel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:取消; 类型:string（字符串）; 默认值:Cancel; 描述:显示在“取消”按钮上的文本。]]></description>
+		</attribute>
+		<attribute>
+			<name>$.messager.show</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:$.messager.show; 参数:options; 描述:在屏幕的右下方显示一个消息窗口 ，options参数是一个可配置的对象: showType：定义如何显示消息窗口，可选值: null,slide,fade,show，默认为slide。 showSpeed：定义窗口显示的时间，单位毫秒，默认为 600。 width：定义消息窗口的宽度，默认为250。 height：定义消息窗口的高度，默认为100。 msg：显示在消息窗口的文本。 title：显示在窗口头部的标题。 timeout：如果定义为0，消息窗口将不会关闭直到用户点击关闭为止。如果定义为非0，消息窗口在超时后将自动关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>$.messager.alert</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:$.messager.alert; 参数:title, msg, icon, fn; 描述:显示警告窗口。参数如下: title：显示在窗口头部的标题文本。 msg：显示在窗口中的文本。 icon：显示的图片，可选值：error,question,info,warning。 fn：当窗口关闭时触发的回调函数。]]></description>
+		</attribute>
+		<attribute>
+			<name>$.messager.confirm</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:$.messager.confirm; 参数:title, msg, fn; 描述:显示一个带有确认和取消按钮的确认信息窗口。参数如下： title：显示在窗口头部的文本。 msg：显示在窗口中的文本。 fn(b)：回调函数，当用户点击确认按钮时，传递一个true值给回调函数，否则传递一个false值。]]></description>
+		</attribute>
+		<attribute>
+			<name>$.messager.prompt</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:$.messager.prompt; 参数:title, msg, fn; 描述:显示一个带有确认和取消的输入信息窗口。 参数如下： title：显示在窗口头部的标题文本。 msg：显示在窗口中的信息 fn(val)：接受用户输入作为参数的回调函数。]]></description>
+		</attribute>
+		<attribute>
+			<name>$.messager.progress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:$.messager.progress; 参数:options or method; 描述:显示一个带进度条信息的窗口。 属性定义如下： title：显示在面板头部的标题文本，默认为''。 msg：显示在主窗体的文本，默认为''。 text：显示在进度条中的信息默认为undefined。 interval：每次进度增加所耗费的时间，单位为毫秒，默认为300. 方法定义如下： bar：获取进度条对象。 close：关闭进程窗口。 示例代码 显示进程消息窗口。 
+					$.messager.progress(); 
+				 使用如下代码关闭窗口。 
+					$.messager.progress('close');
+			]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>progressbar</name>
+		<tag-class>com.smartdp.tag.easyui.ProgressbarTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>progressbar</display-name>
+		<description><![CDATA[进度条。方法[名称:参数:描述]:options:none:返回进度条属性对象。;resize:width:重置进度条。;getValue:none:返回当前进度值。;setValue:value:设置一个新的进度值。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:string（字符串）; 默认值:auto; 描述:设置进度条的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:值; 类型:number（数字）; 默认值:0; 描述:当前进度，百分比数值。]]></description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:文本; 类型:string（字符串）; 默认值:{value}%; 描述:显示在组件中的文本模板。]]></description>
+		</attribute>
+		<attribute>
+			<name>onChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onChange; 参数:newValue,oldValue; 描述:当进度发生改变时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>combo</name>
+		<tag-class>com.smartdp.tag.easyui.ComboTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>combo</display-name>
+		<description><![CDATA[自定义组合框。方法[名称:参数:描述]:options:none:返回属性对象。;panel:none:返回下拉面板对象。;textbox:none:返回文本框对象。;destroy:none:销毁组件。;resize:width:调整组件的宽度。;showPanel:none:显示下拉面板。;hidePanel:none:隐藏下拉面板。;disable:none:禁用组合框。;enable:none:启用组合框。;validate:none:验证输入的值。;isValid:none:返回验证结果。;clear:none:清除组件的值。;getText:none:获取组合框的值。;setText:text:设置组合框的值。;getValues:none:返回一个存储下拉面板值的数组。;setValues:values:设置下拉面板的值，参数values是一个数组。;getValue:none:获取下拉面板的值。;setValue:value:设置下拉面板的值。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:组合框的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>panelWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:下拉框宽度; 类型:number（数字）; 默认值:null; 描述:下拉框的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>panelHeight</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:下拉框高度; 类型:number（数字）; 默认值:200; 描述:下拉框的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>multiple</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可多选; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否支持多选。]]></description>
+		</attribute>
+		<attribute>
+			<name>separator</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:分隔条; 类型:string（字符串）; 默认值:,; 描述:当支持多选时，用以分隔文本的字符。]]></description>
+		</attribute>
+		<attribute>
+			<name>editable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可编辑; 类型:boolean（布尔型）; 默认值:true; 描述:定义用户是否可以直接向组合框输入内容。]]></description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:禁用; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否禁用输入框。]]></description>
+		</attribute>
+		<attribute>
+			<name>hasDownArrow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:下拉图标; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示下拉按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:值; 类型:string（字符串）; 默认值:; 描述:默认值。]]></description>
+		</attribute>
+		<attribute>
+			<name>delay</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:延迟; 类型:number（数字）; 默认值:200; 描述:最后一次输入事件与搜索（自动完成）之间的延迟间隔。]]></description>
+		</attribute>
+		<attribute>
+			<name>keyHandler</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:按键助手; 类型:object（对象）; 默认值:; 描述:当用户按下一个键位时调用的函数，默认的按键助手定义如下： 
+
+keyHandler: {
+
+				up: function(){},
+
+				down: function(){},
+
+				enter: function(){},
+
+				query: function(q){}
+
+}
+			]]></description>
+		</attribute>
+		<attribute>
+			<name>onShowPanel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onShowPanel; 参数:none; 描述:当显示下拉面板的时候触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onHidePanel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onHidePanel; 参数:none; 描述:当隐藏下拉面板的时候触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onChange; 参数:newValue, oldValue; 描述:当组合框的值发生改变时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>datagrid</name>
+		<tag-class>com.smartdp.tag.easyui.DatagridTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>datagrid</display-name>
+		<description><![CDATA[数据表格]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:标题; 类型:string（字符串）; 默认值:null; 描述:显示在控制面板顶部的标题文本。]]></description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:图标CSS类; 类型:string（字符串）; 默认值:null; 描述:在控制面板标题前显示一个16x16大小图标的CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:高度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>left</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:左边距; 类型:number（数字）; 默认值:null; 描述:设置控制面板的左边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>top</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:顶边距; 类型:number（数字）; 默认值:null; 描述:设置控制面板的顶边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:类; 类型:string（字符串）; 默认值:null; 描述:对控制面板引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>headerCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:头部css类; 类型:string（字符串）; 默认值:null; 描述:对控制面板头部引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>bodyCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:主体类; 类型:string（字符串）; 默认值:null; 描述:对控制面板主体引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:样式; 类型:object（对象）; 默认值:{}; 描述:给控制面板添加一个自定义的样式。]]></description>
+		</attribute>
+		<attribute>
+			<name>fit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:铺满浏览器; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true时，控制面板的大小将铺满它所在的容器（浏览器）。]]></description>
+		</attribute>
+		<attribute>
+			<name>border</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:边框; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示控制面板边框。]]></description>
+		</attribute>
+		<attribute>
+			<name>doSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:调整大小; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，在控制面板被创建时将被重置大小并且自动布局。]]></description>
+		</attribute>
+		<attribute>
+			<name>noheader</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:无头部; 类型:boolean（布尔型）; 默认值:false; 描述:如果设置为true，控制面板头部将不被创建。]]></description>
+		</attribute>
+		<attribute>
+			<name>content</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:内容; 类型:string（字符串）; 默认值:null; 描述:控制面板主体的内容。]]></description>
+		</attribute>
+		<attribute>
+			<name>collapsible</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可折叠; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示可折叠按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最小化; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示最小化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>maximizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最大化; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示最大化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>closable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:关闭; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示关闭按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>tools</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:工具栏; 类型:array（数组）; 默认值:[]; 描述:自定义工具栏，每一个工具都可以包含2个属性：图标类 和句柄。]]></description>
+		</attribute>
+		<attribute>
+			<name>collapsed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已折叠; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否折叠。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已最小化; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否最小化。]]></description>
+		</attribute>
+		<attribute>
+			<name>maximized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已最大化; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否最大化。]]></description>
+		</attribute>
+		<attribute>
+			<name>closed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已关闭; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:超链接; 类型:string（字符串）; 默认值:null; 描述:载入远程数据的超链接，载入的数据将显示在控制面板中。]]></description>
+		</attribute>
+		<attribute>
+			<name>cache</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:缓存; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，从超链接载入的数据将被缓存。]]></description>
+		</attribute>
+		<attribute>
+			<name>loadingMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:载入时信息; 类型:string（字符串）; 默认值:Loading…; 描述:在正在载入远程数据时显示在控制面板中的信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>extractor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:提取器; 类型:function（函数）; 默认值:; 描述:定义如何从ajax返回值中提取内容,返回被提取的数据。 
+
+extractor: function(data){
+
+				var pattern = /<body[^>]*>((.|[\n\r])*)<\/body>/im;
+
+				var matches = pattern.exec(data);
+
+				if (matches){
+
+					return matches[1];	// only extract body content
+
+				} else {
+
+					return data;
+
+				}
+
+}
+			]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoad</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoad; 参数:none; 描述:在远程数据被载入时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeOpen; 参数:none; 描述:在控制面板被打开之前触发，返回false将停止打开。]]></description>
+		</attribute>
+		<attribute>
+			<name>onOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onOpen; 参数:none; 描述:在控制面板被打开之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeClose; 参数:none; 描述:在控制面板被关闭之前触发，返回false将取消关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>onClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onClose; 参数:none; 描述:在控制面板被关闭后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeDestroy; 参数:none; 描述:在控制面板被注销前触发，返回false将取消注销。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDestroy; 参数:none; 描述:在控制面板被注销后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeCollapse; 参数:none; 描述:在控制面板被折叠之前触发，返回false将停止折叠。]]></description>
+		</attribute>
+		<attribute>
+			<name>onCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onCollapse; 参数:none; 描述:在控制面板被折叠之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeExpand; 参数:none; 描述:在控制面板被扩展之前触发，返回false将停止扩展（这里应该是指扩展区域，宽、高等）。]]></description>
+		</attribute>
+		<attribute>
+			<name>onExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onExpand; 参数:none; 描述:在控制面板被扩展之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onResize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onResize; 参数:width, height; 描述:在控制面板被缩放后触发。 width： 新的控制面板宽度 height：新的控制面板高度]]></description>
+		</attribute>
+		<attribute>
+			<name>onMove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMove; 参数:left,top; 描述:在控制面板被移动后触发。 left：新的控制面板左边距 top：新的控制面板顶边距]]></description>
+		</attribute>
+		<attribute>
+			<name>onMaximize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMaximize; 参数:none; 描述:在控制面板被最大化后触发]]></description>
+		</attribute>
+		<attribute>
+			<name>onRestore</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onRestore; 参数:none; 描述:在控制面板被重置为初始大小后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onMinimize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMinimize; 参数:none; 描述:在控制面板被最小化后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>columns</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:列; 类型:array（数组）; 默认值:null; 描述:数据表格列配置对象，查看列属性以获取更多细节。]]></description>
+		</attribute>
+		<attribute>
+			<name>frozenColumns</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:固定列; 类型:array（数组）; 默认值:null; 描述:跟列属性一样，但是这些列固定在左边，不会滚动。]]></description>
+		</attribute>
+		<attribute>
+			<name>fitColumns</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:自适应列宽; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true将自动使列适应表格宽度以防止出现水平滚动。]]></description>
+		</attribute>
+		<attribute>
+			<name>striped</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:显示条纹; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true将交替显示行背景。]]></description>
+		</attribute>
+		<attribute>
+			<name>method</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:方法; 类型:string（字符串）; 默认值:post; 描述:请求远程数据的方法类型。]]></description>
+		</attribute>
+		<attribute>
+			<name>nowrap</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:截取; 类型:boolean（布尔型）; 默认值:true; 描述:设置为true，当数据长度超出列宽时将会自动截取。]]></description>
+		</attribute>
+		<attribute>
+			<name>idField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:id字段; 类型:string（字符串）; 默认值:null; 描述:表明该列是一个唯一列。]]></description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:超链接; 类型:string（字符串）; 默认值:null; 描述:一个用以从远程站点请求数据的超链接地址。]]></description>
+		</attribute>
+		<attribute>
+			<name>loadMsg</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:载入时信息; 类型:string（字符串）; 默认值:Processing, please wait …; 描述:当从远程站点载入数据时，显示的一条快捷信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>pagination</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:分页; 类型:boolean（布尔型）; 默认值:false; 描述:设置true将在数据表格底部显示分页工具栏。]]></description>
+		</attribute>
+		<attribute>
+			<name>rownumbers</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:行数; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true将显示行数。]]></description>
+		</attribute>
+		<attribute>
+			<name>singleSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:单选模式; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true将只允许选择一行。]]></description>
+		</attribute>
+		<attribute>
+			<name>pageNumber</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:当前页码; 类型:number（数字）; 默认值:1; 描述:当设置分页属性时，初始化分页码。]]></description>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:每页记录数; 类型:number（数字）; 默认值:10; 描述:当设置分页属性时，初始化每页记录数。]]></description>
+		</attribute>
+		<attribute>
+			<name>pageList</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可选择的每页记录数; 类型:array; 默认值:[10,20,30,40,50]; 描述:当设置分页属性时，初始化每页记录数列表。]]></description>
+		</attribute>
+		<attribute>
+			<name>queryParams</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:查询参数; 类型:object（对象）; 默认值:{}; 描述:当请求远程数据时，发送的额外参数。]]></description>
+		</attribute>
+		<attribute>
+			<name>sortName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:默认排序; 类型:string（字符串）; 默认值:null; 描述:当数据表格初始化时以哪一列来排序。]]></description>
+		</attribute>
+		<attribute>
+			<name>sortOrder</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:排序顺序; 类型:string（字符串）; 默认值:asc; 描述:定义排序顺序，可以是'asc'或者'desc'（正序或者倒序）。]]></description>
+		</attribute>
+		<attribute>
+			<name>remoteSort</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:远程排序; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否通过远程服务器对数据排序。]]></description>
+		</attribute>
+		<attribute>
+			<name>showFooter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:显示行底; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示行底（如果是做统计表格，这里可以显示总计等）。]]></description>
+		</attribute>
+		<attribute>
+			<name>rowStyler</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:行样式; 类型:function（函数）; 默认值:; 描述:返回样式，如：'background:red'，function有2个参数： index：行索引，从0开始. row：对应于该行记录的对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>loadFilter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:载入过滤器; 类型:function（函数）; 默认值:; 描述:返回用以显示的已过滤数据，function有一个参数'data'表示原始数据，你可以将原始数据改变为规范的数据格式，该函数必须返回包含 'total'和'rows'属性的标准数据对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>editors</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:编辑模式; 类型:object（对象）; 默认值:predefined editors; 描述:定义当编辑一行时的编辑模式。]]></description>
+		</attribute>
+		<attribute>
+			<name>view</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:视图; 类型:object（对象）; 默认值:default view; 描述:定义数据表格的视图。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoadSuccess</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoadSuccess; 参数:data; 描述:当数据载入成功时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoadError</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoadError; 参数:none; 描述:当载入远程数据发生错误时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeLoad</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeLoad; 参数:param; 描述:在请求载入数据之前触发，如果返回false将取消载入。]]></description>
+		</attribute>
+		<attribute>
+			<name>onClickRow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onClickRow; 参数:rowIndex, rowData; 描述:当用户点击行时触发，参数如下： rowIndex：被点击的行索引，从0开始。 rowData：对应于被点击的行的记录。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDblClickRow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDblClickRow; 参数:rowIndex, rowData; 描述:当用户双击一行时触发，参数如下： rowIndex：被点击的行索引，从0开始。 rowData：对应于被点击的行的记录。]]></description>
+		</attribute>
+		<attribute>
+			<name>onClickCell</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onClickCell; 参数:rowIndex, field, value; 描述:当用户点击单元格时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDblClickCell</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDblClickCell; 参数:rowIndex, field, value; 描述:当用户双击单元格时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSortColumn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSortColumn; 参数:sort, order; 描述:当用户对列排序时触发，参数如下： sort：排序字段名称。 order：排序顺序。]]></description>
+		</attribute>
+		<attribute>
+			<name>onResizeColumn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onResizeColumn; 参数:field, width; 描述:当用户调整列宽时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSelect; 参数:rowIndex, rowData; 描述:当用户选择一行是触发，参数如下： rowIndex：被选择的行索引，从0开始。 rowData：对应于被选择行的记录。]]></description>
+		</attribute>
+		<attribute>
+			<name>onUnselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onUnselect; 参数:rowIndex, rowData; 描述:当用户取消选择一行时触发，参数如下： rowIndex：被取消选择的行索引，从0开始。 rowData：对应于被取消选择行的记录。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSelectAll</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSelectAll; 参数:rows; 描述:当用户选择所有行时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onUnselectAll</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onUnselectAll; 参数:rows; 描述:当用户取消选择所有行时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeEdit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeEdit; 参数:rowIndex, rowData; 描述:当用户开始编辑一行时触发，参数如下： rowIndex：正在编辑的行索引，从0开始。 rowData：对应于正在编辑的行的记录。]]></description>
+		</attribute>
+		<attribute>
+			<name>onAfterEdit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onAfterEdit; 参数:rowIndex, rowData, changes; 描述:当用户编辑完成时触发，参数如下： rowIndex：正在编辑的行索引，从0开始。 rowData：对应于正在编辑的行的记录。 changes：被改变的字段内容，对应方式为字段：值。]]></description>
+		</attribute>
+		<attribute>
+			<name>onCancelEdit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onCancelEdit; 参数:rowIndex, rowData; 描述:当用户取消编辑行时触发，参数如下： rowIndex：正在编辑的行索引，从0开始。 rowData：对应于正在编辑的行的记录。]]></description>
+		</attribute>
+		<attribute>
+			<name>onHeaderContextMenu</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onHeaderContextMenu; 参数:e, field; 描述:当数据表格的列标题被鼠标右键单击时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onRowContextMenu</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onRowContextMenu; 参数:e, rowIndex, rowData; 描述:当一行被鼠标右键单击时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>checkOnSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[]]></description>
+		</attribute>
+		<attribute>
+			<name>selectOnCheck</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[]]></description>
+		</attribute>
+		<attribute>
+			<name>toolbar</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		
+		<name>datagridcolumn</name>
+		<tag-class>com.smartdp.tag.easyui.DatagridColumnTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>datagridcolumn</display-name>
+		<description><![CDATA[数据表格列]]></description>
+		<attribute>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:title（标题）; 参数:string（字符串）; 描述:列标题。]]></description>
+		</attribute>
+		<attribute>
+			<name>field</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:field（字段）; 参数:string（字符串）; 描述:列字段。]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:width（宽度）; 参数:number（数字）; 描述:列宽。]]></description>
+		</attribute>
+		<attribute>
+			<name>rowspan</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:rowspan（跨行数）; 参数:number（数字）; 描述:表明一个单元格跨几行。]]></description>
+		</attribute>
+		<attribute>
+			<name>colspan</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:colspan（跨列数）; 参数:number（数字）; 描述:表明一个单元格跨几列。]]></description>
+		</attribute>
+		<attribute>
+			<name>align</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:align（对其方式）; 参数:string（字符串）; 描述:表明如何对其列数据，可选值：'left'，'right'，'center'。]]></description>
+		</attribute>
+		<attribute>
+			<name>sortable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:sortable（可排序）; 参数:boolean（布尔型）; 描述:设置为true允许对该列排序。]]></description>
+		</attribute>
+		<attribute>
+			<name>resizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:resizable（缩放）; 参数:boolean（布尔型）; 描述:设置为true允许该列被缩放。]]></description>
+		</attribute>
+		<attribute>
+			<name>hidden</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:hidden（隐藏）; 参数:boolean（布尔型）; 描述:设置为true将隐藏列。]]></description>
+		</attribute>
+		<attribute>
+			<name>checkbox</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:checkbox（复选框）; 参数:boolean（布尔型）; 描述:设置为true将显示复选框。]]></description>
+		</attribute>
+		<attribute>
+			<name>formatter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:formatter（格式化）; 参数:function（函数）; 描述:格式化单元格函数，有3个参数： value：字段的值。 rowData：行数据。 rowIndex：行索引。]]></description>
+		</attribute>
+		<attribute>
+			<name>styler</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:styler（样式）; 参数:function（函数）; 描述:单元格样式函数，返回样式字符串装饰表格如'background:red'，function有3个参数： value：字段值。 rowData：行数据。 rowIndex：行索引。]]></description>
+		</attribute>
+		<attribute>
+			<name>sorter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:sorter（排序器）; 参数:function（函数）; 描述:T自定义字段排序函数，有2个参数： a：该列的第一个值。 b：该列的第二个值。]]></description>
+		</attribute>
+		<attribute>
+			<name>editor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:editor（编辑器）; 参数:string,object（字符串，对象）; 描述:表明编辑类型。如果属性是字符串类型表示编辑类型，如果是对象则包含2个参数： type：字符串，编辑类型，可选值：text，textarea，checkbox，numberbox，validatebox，datebox，combobox，combotree。 options：对象，对象于编辑类型的编辑器属性。]]></description>
+		</attribute>
+		<attribute>
+			<name>dict</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>splitbutton</name>
+		<tag-class>com.smartdp.tag.easyui.SplitbuttonTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>splitbutton</display-name>
+		<description><![CDATA[分隔按钮]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>plain</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:简洁模式; 类型:boolean（布尔型）; 默认值:true; 描述:设置为true将显示简洁效果。]]></description>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:菜单; 类型:string（字符串）; 默认值:null; 描述:用来创建一个相应菜单的选择器。]]></description>
+		</attribute>
+		<attribute>
+			<name>duration</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:持续时间; 类型:number（数字）; 默认值:100; 描述:定义鼠标划过按钮时显示菜单所持续的时间，单位为毫秒。]]></description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:options; 参数:none; 描述:返回属性对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>disable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:disable; 参数:none; 描述:禁用分隔按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>enable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:enable; 参数:none; 描述:启用分隔按钮。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>timespinner</name>
+		<tag-class>com.smartdp.tag.easyui.TimespinnerTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>timespinner</display-name>
+		<description><![CDATA[时间调节器]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>separator</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:分隔符; 类型:string（字符串）; 默认值::; 描述:时分秒直接的分隔符号。]]></description>
+		</attribute>
+		<attribute>
+			<name>showSeconds</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:显示秒数; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示描述信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>highlight</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:高亮; 类型:number（数字）; 默认值:0; 描述:显示高亮背景的时间要素，0=时，1=分，…]]></description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:options; 参数:none; 描述:返回属性对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>setValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:setValue; 参数:value; 描述:设置时间调节器的值。]]></description>
+		</attribute>
+		<attribute>
+			<name>getHours</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:getHours; 参数:none; 描述:获取当前小时的值。]]></description>
+		</attribute>
+		<attribute>
+			<name>getMinutes</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:getMinutes; 参数:none; 描述:获取当前分钟的值。]]></description>
+		</attribute>
+		<attribute>
+			<name>getSeconds</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:getSeconds; 参数:none; 描述:获取当前秒钟的值。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>easyloader</name>
+		<tag-class>com.smartdp.tag.easyui.EasyloaderTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>easyloader</display-name>
+		<description><![CDATA[简单载入器。方法[名称:参数:描述]:load:module, callback:载入特定的模块。当载入成功时将调用回调函数。 有效的模块参数类型如下: 单一的模块名称 一个存储有模块名称的数组 一个以'.css'结尾的样式文件 一个以'.js'结尾的js文件;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>modules</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:模块; 类型:object（对象）; 默认值:; 描述:预定义模块。]]></description>
+		</attribute>
+		<attribute>
+			<name>locales</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:多语言; 类型:object（预定义对象）; 默认值:; 描述:预定义多语言。]]></description>
+		</attribute>
+		<attribute>
+			<name>base</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:很目录; 类型:string（字符串）; 默认值:easyui根目录将会被自动设置为相对于easyload.js的位置。; 描述:easyui根目录,必须以'/'结尾。]]></description>
+		</attribute>
+		<attribute>
+			<name>theme</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:主题名称; 类型:string（字符串）; 默认值:default; 描述:'themes'目录中的主题的名称。]]></description>
+		</attribute>
+		<attribute>
+			<name>css</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:层叠样式表; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否在加载模块的同时加载css文件。]]></description>
+		</attribute>
+		<attribute>
+			<name>locale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:自定义语言; 类型:string（字符串）; 默认值:null; 描述:语言名称。]]></description>
+		</attribute>
+		<attribute>
+			<name>timeout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:超时; 类型:number（数字）; 默认值:2000; 描述:超时单位为毫秒，出现超时就触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onProgress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onProgress; 参数:name; 描述:当一个模块成功载入时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoad</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoad; 参数:name; 描述:当一个模块及其所有依赖关系（可以理解为载入该模块所需要的其他模块、属性、方法等）载入时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>validatebox</name>
+		<tag-class>com.smartdp.tag.easyui.ValidateboxTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>validatebox</display-name>
+		<description><![CDATA[表单验证]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:必填; 类型:boolean（布尔型）; 默认值:false; 描述:定义表单域必须填写。]]></description>
+		</attribute>
+		<attribute>
+			<name>validType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:验证类型; 类型:string（字符串）; 默认值:null; 描述:定义表单域的验证类型，比如：email, url等。]]></description>
+		</attribute>
+		<attribute>
+			<name>missingMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:未填提示; 类型:string（字符串）; 默认值:This field is required.; 描述:当表单域未填写时出现的提示信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>invalidMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:无效提示; 类型:string（字符串）; 默认值:null; 描述:当表单域的内容被验证为无效时出现的提示。]]></description>
+		</attribute>
+		<attribute>
+			<name>destroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:destroy; 参数:none; 描述:移除并注销组件。]]></description>
+		</attribute>
+		<attribute>
+			<name>validate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:validate; 参数:none; 描述:验证表单域的内容是否有效。]]></description>
+		</attribute>
+		<attribute>
+			<name>isValid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:isValid; 参数:none; 描述:调用validate方法并且返回验证结果，true或者false。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>searchbox</name>
+		<tag-class>com.smartdp.tag.easyui.SearchboxTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>searchbox</display-name>
+		<description><![CDATA[搜索框]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:设置组建的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>propmt</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:提醒; 类型:string（字符串）; 默认值:''; 描述:显示在搜索框的提醒信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:值; 类型:string（字符串）; 默认值:''; 描述:搜索框的默认值。]]></description>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:菜单; 类型:selector（选择器）; 默认值:null; 描述:搜索类型下拉菜单。]]></description>
+		</attribute>
+		<attribute>
+			<name>searcher</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:搜索器; 类型:function(value,name); 默认值:null; 描述:当用户点击搜索按钮或者按下ENTER键的时候搜索函数将被调用。]]></description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:options; 参数:none; 描述:返回搜索框属性对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:menu; 参数:none; 描述:返回搜索类型菜单对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>textbox</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:textbox; 参数:none; 描述:返回文本框对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>getValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:getValue; 参数:none; 描述:返回当前搜索关键字。]]></description>
+		</attribute>
+		<attribute>
+			<name>setValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:setValue; 参数:value; 描述:设置新的搜索关键字。]]></description>
+		</attribute>
+		<attribute>
+			<name>getName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:getName; 参数:none; 描述:返回当前搜索类型。]]></description>
+		</attribute>
+		<attribute>
+			<name>destroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:destroy; 参数:none; 描述:清除搜索框组件]]></description>
+		</attribute>
+		<attribute>
+			<name>resize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:resize; 参数:width; 描述:重置搜索框组建的宽度。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>tree</name>
+		<tag-class>com.smartdp.tag.easyui.TreeTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>tree</display-name>
+		<description><![CDATA[树形菜单。方法[名称:参数:描述]:options:none:返回树形菜单属性对象。;loadData:data:载入树形菜单数据。;getNode:target:获取特定的节点对象。;getData:target:获取特定的节点数据，包括它的子节点。;reload:target:重新载入树形菜单数据。;getRoot:none:获取根节点，返回节点对象。;getRoots:none:获取根节点，返回节点数组。;getParent:target:获取父节点，target是一个节点DOM对象。;getChildren:target:获取子节点，target参数是一个节点DOM对象。;getChecked:none:获取所有被选择的节点。;getSelected:none:获取被选择的节点并返回，如果没有节点被选择则返回null。;isLeaf:target:判断指定的节点是否是叶子节点，target参数是一个节点DOM对象。;find:id:查找指定的节点并返回节点对象。;select:target:选择一个节点，target参数是一个节点DOM对象。;check:target:设置指定的节点为已选择状态。;uncheck:target:设置指定的节点为未选择状态。<;collapse:target:关闭节点，target参数是一个节点DOM对象。;expand:target:打开节点，target参数是一个节点DOM对象。;collapseAll:target:关闭所有的节点。;expandAll:target:打开所有的节点。;expandTo:target:打开从根节点到指定节点之间的所有节点。;append:param:添加若干子节点到一个父节点，param参数有2个属性： parent：DOM对象，将要被添加子节点的父节点，如果未指定，子节点将被添加至根节点。 data：数组，节点数据。;toggle:target:打开或关闭节点的触发器，target参数是一个节点DOM对象。;insert:param:在一个指定节点之前或之后插入节点，'param'参数包含如下属性： before：DOM对象，在某个节点之前插入。 after: DOM对象，在某个节点之后插入。 data：对象，节点数据。;remove:target:移除一个节点和它的子节点，target参数是一个节点DOM对象。;pop:target:移除一个节点和它的子节点，该方法跟remove方法一样，不同的是它将返回被移除的节点数据。;update:param:更新指定的节点，param参数有如下属性： target(DOM对象，将被更新的目标节点)，id，text，iconCls，checked等。;enableDnd:none:启用拖动特性。;disableDnd:none:禁用拖动特性。;beginEdit:nodeEl:开始编辑节点。;endEdit:nodeEl:结束编辑节点。;cancelEdit:nodeEl:取消编辑节点。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:超链接; 类型:string（字符串）; 默认值:null; 描述:用以载入远程数据的超链接地址。]]></description>
+		</attribute>
+		<attribute>
+			<name>method</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:方法; 类型:string（字符串）; 默认值:post; 描述:获取数据的HTTP方法。]]></description>
+		</attribute>
+		<attribute>
+			<name>animate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:动画; 类型:boolean（布尔型）; 默认值:false; 描述:定义当节点打开或关闭时是否显示动画效果。]]></description>
+		</attribute>
+		<attribute>
+			<name>checkbox</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:复选框; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否在每个节点之前显示复选框。]]></description>
+		</attribute>
+		<attribute>
+			<name>cascadeCheck</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:级联选择; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否支持级联选择。]]></description>
+		</attribute>
+		<attribute>
+			<name>onlyLeafCheck</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:只选叶子节点; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否只在叶子节点之前显示复选框。]]></description>
+		</attribute>
+		<attribute>
+			<name>dnd</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:拖放; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否支持拖放。]]></description>
+		</attribute>
+		<attribute>
+			<name>data</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:数据; 类型:array（数组）; 默认值:null; 描述:将被载入的节点数据。]]></description>
+		</attribute>
+		<attribute>
+			<name>onClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onClick; 参数:node; 描述:当用户点击节点时触发，node参数包含如下属性： id：节点id。 text：显示在节点上的文本。 checked：节点是否被选择。 attributes：节点的自定义属性。 target：被点击的目标DOM对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDblClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDblClick; 参数:node; 描述:当用户双击节点时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeLoad</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeLoad; 参数:node, param; 描述:在请求载入数据之前触发，返回false将取消载入。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoadSuccess</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoadSuccess; 参数:node, data; 描述:当数据载入成功时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoadError</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoadError; 参数:arguments; 描述:当数据载入失败时触发，arguments参数跟jQuery.ajax的'error'函数一样。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeExpand; 参数:node; 描述:在节点打开之前触发，返回false将取消打开。]]></description>
+		</attribute>
+		<attribute>
+			<name>onExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onExpand; 参数:node; 描述:在节点被打开时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeCollapse; 参数:node; 描述:在节点被关闭之前触发，返回false将取消关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>onCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onCollapse; 参数:node; 描述:当节点被关闭时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onCheck</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onCheck; 参数:node, checked; 描述:当用户点击复选框时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeSelect; 参数:node; 描述:在节点被选择之前触发，返回false将取消选择。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSelect; 参数:node; 描述:当节点被选择时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onContextMenu</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onContextMenu; 参数:e, node; 描述:当节点被鼠标右键点击时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDrop</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDrop; 参数:target, source, point; 描述:当节点位置被（拖动）更换时触发。 target：DOM对象，需要被拖动动的目标节点。 source：原始节点。 point：指明拖动方式，可选值：'append'，'top'或者'bottom'。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeEdit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeEdit; 参数:node; 描述:在编辑节点之前触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onAfterEdit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onAfterEdit; 参数:node; 描述:在编辑节点之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onCancelEdit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onCancelEdit; 参数:node; 描述:当取消编辑时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>layoutcontainer</name>
+		<tag-class>com.smartdp.tag.easyui.LayoutContainerTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>layoutcontainer</display-name>
+		<description><![CDATA[布局面板]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[类型(body.div)]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[width]]></description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[height]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>layout</name>
+		<tag-class>com.smartdp.tag.easyui.LayoutTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>layout</display-name>
+		<description><![CDATA[布局面板]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:标题; 类型:string（字符串）; 默认值:null; 描述:布局面板的标题。]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:高度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>region</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:区域; 类型:string（字符串）; 默认值:; 描述:定义布局面板的位置（方向），可以取下列值的其中之一：north, south, east, west, center。]]></description>
+		</attribute>
+		<attribute>
+			<name>border</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:边框; 类型:boolean（布尔型）; 默认值:true; 描述:设置为true将显示布局面板的边框。]]></description>
+		</attribute>
+		<attribute>
+			<name>split</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:分隔条; 类型:boolean（布尔型）; 默认值:false; 描述:如果设置为true将显示一个分隔条，用户可以拖动分隔条来改变布局面板的尺寸。]]></description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:图标CSS类; 类型:string（字符串）; 默认值:null; 描述:一个用来显示布局面板头部图标的css类。]]></description>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:超链接; 类型:string（字符串）; 默认值:null; 描述:一个用来从远程站点载入数据的超链接。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>resizable</name>
+		<tag-class>com.smartdp.tag.easyui.ResizableTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>resizable</display-name>
+		<description><![CDATA[缩放]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:禁止缩放; 类型:boolean（布尔型）; 默认值:false; 描述:如果设置为true将禁止缩放。]]></description>
+		</attribute>
+		<attribute>
+			<name>handles</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:句柄; 类型:string（字符串）; 默认值:n, e, s, w, ne, se, sw, nw, all; 描述:说明缩放的方向，'n'表示向上（北）,'e'表示向右（东）等。]]></description>
+		</attribute>
+		<attribute>
+			<name>minWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最小宽度; 类型:number（数字）; 默认值:10; 描述:缩放时所允许的最小宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>minHeight</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最小高度; 类型:number（数字）; 默认值:10; 描述:缩放时所允许的最小高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>maxWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最大宽度; 类型:number（数字）; 默认值:10000; 描述:缩放时所允许的最大宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>maxHeight</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:maxHeight; 类型:number（数字）; 默认值:10000; 描述:缩放时所允许的最大高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>edge</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:边界; 类型:number（数字）; 默认值:5; 描述:将被缩放的边框的边界。]]></description>
+		</attribute>
+		<attribute>
+			<name>onStartResize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onStartResize; 参数:e; 描述:当开始缩放时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onResize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onResize; 参数:e; 描述:在缩放过程中触发，当返回false时, DOM元素将不再缩放。]]></description>
+		</attribute>
+		<attribute>
+			<name>onStopResize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onStopResize; 参数:e; 描述:当缩放停止是触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>treegrid</name>
+		<tag-class>com.smartdp.tag.easyui.TreegridTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>treegrid</display-name>
+		<description><![CDATA[树形表格。方法[名称:参数:描述]:options:none:返回树形表格的属性对象。;resize:options:设置树形表格的大小，options包含2个属性： width：新的树形表格宽度 height：新的树形表格高度。;fixRowHeight:id:固定特定行的高。;loadData:data:载入树形表格数据。;reload:id:重新载入树形表格数据。;reloadFooter:footer:重新载入树形表格的行底数据。;getData:none:获取已载入的数据。;getFooterRows:none:获取行底数据。;getRoot:none:获取根节点，返回节点对象。;getRoots:none:获取根节点，返回节点数组。;getParent:id:获取父节点。;getChildren:id:获取子节点。;getSelected:none:获取被选择节点并返回，如果没有节点被选择则返回null。;getSelections:none:获取所有被选择的节点。;getLevel:id:获取指定的节点的层级。;find:id:查找指定的节点并返回节点数据。;select:id:选择一个节点。;unselect:id:取消选择一个节点。;selectAll:none:选择所有的节点。;unselectAll:none:取消选择所有的节点。;collapse:id:关闭节点。;expand:id:打开节点。;collapseAll:id:关闭所有节点。;expandAll:id:打开所有节点。;expandTo:id:打开从根节点到指定节点直接的所有节点。;toggle:id:打开或关闭节点的触发器。;append:param:添加若干子节点到一个父节点，'param'参数包含如下属性： parent：DOM对象，将要被添加子节点的父节点，如果未指定，子节点将被添加至根节点。 data：数组，节点数据。;remove:id:移除一个节点和它的子节点。;refresh:id:属性指定的节点。;beginEdit:id:开始编辑节点。;endEdit:id:结束编辑节点。;cancelEdit:id:取消编辑节点。;getEditors:id:获取指定行的编辑器，每个编辑器都有如下属性： actions：编辑器可以做的行为。 target：目标编辑器jQuery对象。 field：字段名。 type：编辑类型。;getEditor:options:获取指定的编辑器，options包含2个属性： id：行节点 id。 field：字段名。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>treeField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:树形字段; 类型:string（字符串）; 默认值:null; 描述:定义作为树节点的字段。]]></description>
+		</attribute>
+		<attribute>
+			<name>animate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:动画; 类型:boolean（布尔型）; 默认值:false; 描述:定义当打开或关闭节点时是否显示动画效果。]]></description>
+		</attribute>
+		<attribute>
+			<name>onClickRow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onClickRow; 参数:row; 描述:当用户点击节点时触发 。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDblClickRow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDblClickRow; 参数:row; 描述:当用户双击节点时触发 。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeLoad</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeLoad; 参数:row, param; 描述:在请求载入数据之前触发，返回false将取消载入。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoadSuccess</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoadSuccess; 参数:row, data; 描述:当数据载入成功时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoadError</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoadError; 参数:arguments; 描述:当数据载入失败时触发，arguments参数和jQuery.ajax的'error'函数一样。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeExpand; 参数:row; 描述:在节点打开之前触发 ，返回false将取消打开。]]></description>
+		</attribute>
+		<attribute>
+			<name>onExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onExpand; 参数:row; 描述:当节点打开时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeCollapse; 参数:row; 描述:在节点关闭之前触发，返回false将取消关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>onCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onCollapse; 参数:row; 描述:当节点关闭时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onContextMenu</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onContextMenu; 参数:e, row; 描述:当节点被鼠标右键点击时触发 。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeEdit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeEdit; 参数:row; 描述:当用户开始编辑节点时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onAfterEdit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onAfterEdit; 参数:row,changes; 描述:当用户结束编辑时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onCancelEdit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onCancelEdit; 参数:row; 描述:当用户取消编辑节点时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>dialog</name>
+		<tag-class>com.smartdp.tag.easyui.DialogTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>dialog</display-name>
+		<description><![CDATA[对话窗口]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:标题; 类型:string（字符串）; 默认值:New Window; 描述:窗口的标题。]]></description>
+		</attribute>
+		<attribute>
+			<name>buttons</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:按钮; array（数组）; 默认值:null; 描述:对话窗口底部的按钮，每个按钮的属性都跟链接按钮一样。
+				[{  
+						text:'Ok',  
+						iconCls:'icon-ok',  
+						handler:function(){  
+						}  
+					},{  
+						text:'Cancel',  
+						handler:function(){  
+						}  
+					}]  
+			]]></description>
+		</attribute>
+		<attribute>
+			<name>collapsible</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可折叠; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示折叠按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最小化; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示最小化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>maximizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最大化; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示最大化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>closable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:关闭; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示关闭按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>closed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已关闭; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否在初始化组件时关闭（隐藏）窗口]]></description>
+		</attribute>
+		<attribute>
+			<name>zIndex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:堆叠顺序; 类型:number（数字）; 默认值:9000; 描述:窗口的堆叠顺序，从第一个窗口的zIndex值开始递增。]]></description>
+		</attribute>
+		<attribute>
+			<name>draggable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可拖放; 类型:boolean（布尔型）; 默认值:true; 描述:定义窗口是否可以被拖放。]]></description>
+		</attribute>
+		<attribute>
+			<name>resizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可缩放; 类型:boolean（布尔型）; 默认值:true; 描述:定义窗口是否可以被缩放。]]></description>
+		</attribute>
+		<attribute>
+			<name>shadow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:阴影; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，显示窗口的时候将显示阴影。]]></description>
+		</attribute>
+		<attribute>
+			<name>inline</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:行内显示; 类型:boolean（布尔型）; 默认值:false; 描述:定义如何布局窗口，如果设置为true，窗口将显示在它的父容器中，否则将显示在所有元素的上面。]]></description>
+		</attribute>
+		<attribute>
+			<name>modal</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:遮罩; 类型:boolean（布尔型）; 默认值:true; 描述:定义窗口是否带有遮罩效果。]]></description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:图标CSS类; 类型:string（字符串）; 默认值:null; 描述:在控制面板标题前显示一个16x16大小图标的CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:高度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>left</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:左边距; 类型:number（数字）; 默认值:null; 描述:设置控制面板的左边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>top</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:顶边距; 类型:number（数字）; 默认值:null; 描述:设置控制面板的顶边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:类; 类型:string（字符串）; 默认值:null; 描述:对控制面板引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>headerCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:头部css类; 类型:string（字符串）; 默认值:null; 描述:对控制面板头部引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>bodyCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:主体类; 类型:string（字符串）; 默认值:null; 描述:对控制面板主体引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:样式; 类型:object（对象）; 默认值:{}; 描述:给控制面板添加一个自定义的样式。]]></description>
+		</attribute>
+		<attribute>
+			<name>fit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:铺满浏览器; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true时，控制面板的大小将铺满它所在的容器（浏览器）。]]></description>
+		</attribute>
+		<attribute>
+			<name>border</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:边框; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示控制面板边框。]]></description>
+		</attribute>
+		<attribute>
+			<name>doSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:调整大小; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，在控制面板被创建时将被重置大小并且自动布局。]]></description>
+		</attribute>
+		<attribute>
+			<name>noheader</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:无头部; 类型:boolean（布尔型）; 默认值:false; 描述:如果设置为true，控制面板头部将不被创建。]]></description>
+		</attribute>
+		<attribute>
+			<name>content</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:内容; 类型:string（字符串）; 默认值:null; 描述:控制面板主体的内容。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最小化; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示最小化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>tools</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:工具栏; 类型:array（数组）; 默认值:[]; 描述:自定义工具栏，每一个工具都可以包含2个属性：图标类 和句柄。]]></description>
+		</attribute>
+		<attribute>
+			<name>collapsed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已折叠; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否折叠。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已最小化; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否最小化。]]></description>
+		</attribute>
+		<attribute>
+			<name>maximized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已最大化; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否最大化。]]></description>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:超链接; 类型:string（字符串）; 默认值:null; 描述:载入远程数据的超链接，载入的数据将显示在控制面板中。]]></description>
+		</attribute>
+		<attribute>
+			<name>cache</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:缓存; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，从超链接载入的数据将被缓存。]]></description>
+		</attribute>
+		<attribute>
+			<name>loadingMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:载入时信息; 类型:string（字符串）; 默认值:Loading…; 描述:在正在载入远程数据时显示在控制面板中的信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>extractor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:提取器; 类型:function（函数）; 默认值:; 描述:定义如何从ajax返回值中提取内容,返回被提取的数据。 
+
+extractor: function(data){
+
+				var pattern = /<body[^>]*>((.|[\n\r])*)<\/body>/im;
+
+				var matches = pattern.exec(data);
+
+				if (matches){
+
+					return matches[1];	// only extract body content
+
+				} else {
+
+					return data;
+
+				}
+
+}
+			]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoad</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoad; 参数:none; 描述:在远程数据被载入时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeOpen; 参数:none; 描述:在控制面板被打开之前触发，返回false将停止打开。]]></description>
+		</attribute>
+		<attribute>
+			<name>onOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onOpen; 参数:none; 描述:在控制面板被打开之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeClose; 参数:none; 描述:在控制面板被关闭之前触发，返回false将取消关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>onClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onClose; 参数:none; 描述:在控制面板被关闭后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeDestroy; 参数:none; 描述:在控制面板被注销前触发，返回false将取消注销。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDestroy; 参数:none; 描述:在控制面板被注销后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeCollapse; 参数:none; 描述:在控制面板被折叠之前触发，返回false将停止折叠。]]></description>
+		</attribute>
+		<attribute>
+			<name>onCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onCollapse; 参数:none; 描述:在控制面板被折叠之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeExpand; 参数:none; 描述:在控制面板被扩展之前触发，返回false将停止扩展（这里应该是指扩展区域，宽、高等）。]]></description>
+		</attribute>
+		<attribute>
+			<name>onExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onExpand; 参数:none; 描述:在控制面板被扩展之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onResize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onResize; 参数:width, height; 描述:在控制面板被缩放后触发。 width： 新的控制面板宽度 height：新的控制面板高度]]></description>
+		</attribute>
+		<attribute>
+			<name>onMove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMove; 参数:left,top; 描述:在控制面板被移动后触发。 left：新的控制面板左边距 top：新的控制面板顶边距]]></description>
+		</attribute>
+		<attribute>
+			<name>onMaximize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMaximize; 参数:none; 描述:在控制面板被最大化后触发]]></description>
+		</attribute>
+		<attribute>
+			<name>onRestore</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onRestore; 参数:none; 描述:在控制面板被重置为初始大小后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onMinimize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMinimize; 参数:none; 描述:在控制面板被最小化后触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>numberspinner</name>
+		<tag-class>com.smartdp.tag.easyui.NumberspinnerTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>numberspinner</display-name>
+		<description><![CDATA[数字调节器]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:options; 类型:none; 默认值:null; 描述:返回属性对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>setValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:setValue; 类型:value; 默认值:null; 描述:设置数字调节器的值。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>calendar</name>
+		<tag-class>com.smartdp.tag.easyui.CalendarTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>calendar</display-name>
+		<description><![CDATA[日历。方法[名称:参数:描述]:options:none:返回属性对象。;resize:none:重置日历的大小。;moveTo:date:将日历设置到一个指定的日期。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:180; 描述:日历组件的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:高度; 类型:number（数字）; 默认值:180; 描述:日历组件的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>fit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:铺满浏览器; 类型:boolean（布尔型）; 默认值:false; 描述:当设置为true时，日历组件的大小将铺满装载它的父容器（浏览器）。]]></description>
+		</attribute>
+		<attribute>
+			<name>border</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:边框; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示边框。]]></description>
+		</attribute>
+		<attribute>
+			<name>weeks</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:星期代码列表; 类型:array（数组）; 默认值:['S','M','T','W','T','F','S']; 描述:显示星期几的代码列表。]]></description>
+		</attribute>
+		<attribute>
+			<name>months</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:月份代码列表; 类型:array（数组）; 默认值:['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; 描述:显示月份的代码列表。]]></description>
+		</attribute>
+		<attribute>
+			<name>year</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:年份; 类型:number（数字）; 默认值:当前年份(4位数字); 描述:日历组件的起始年份]]></description>
+		</attribute>
+		<attribute>
+			<name>month</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:月份; 类型:number（数字）; 默认值:当前月份，从1开始。; 描述:日历组件默认显示的月份。]]></description>
+		</attribute>
+		<attribute>
+			<name>current</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:当前日期; 类型:Date（日期）; 默认值:当前日期。; 描述:当前日期。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSelect; 参数:date; 描述:当用户选择日期的时候触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>accordion</name>
+		<tag-class>com.smartdp.tag.easyui.AccordionTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>accordion</display-name>
+		<description><![CDATA[可伸缩面板]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:可伸缩面板所在容器的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:高度; 类型:number（数字）; 默认值:auto; 描述:可伸缩面板所在容器的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>fit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:铺满浏览器; 类型:boolean（布尔型）; 默认值:false; 描述:如果设置为true，可伸缩面板所在容器将铺满它所在的父容器（浏览器）]]></description>
+		</attribute>
+		<attribute>
+			<name>border</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:边框; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示边框。]]></description>
+		</attribute>
+		<attribute>
+			<name>animate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:动画效果; 类型:boolean（布尔型）; 默认值:true; 描述:定义当延伸或者折叠面板时是否显示动画效果。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>accordionpanel</name>
+		<tag-class>com.smartdp.tag.easyui.AccordionPanelTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>accordionpanel</display-name>
+		<description><![CDATA[可伸缩面板]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:标题; 类型:string（字符串）; 默认值:null; 描述:显示在控制面板顶部的标题文本。]]></description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:图标CSS类; 类型:string（字符串）; 默认值:null; 描述:在控制面板标题前显示一个16x16大小图标的CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:高度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>left</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:左边距; 类型:number（数字）; 默认值:null; 描述:设置控制面板的左边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>top</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:顶边距; 类型:number（数字）; 默认值:null; 描述:设置控制面板的顶边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:类; 类型:string（字符串）; 默认值:null; 描述:对控制面板引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>headerCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:头部css类; 类型:string（字符串）; 默认值:null; 描述:对控制面板头部引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>bodyCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:主体类; 类型:string（字符串）; 默认值:null; 描述:对控制面板主体引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:样式; 类型:object（对象）; 默认值:{}; 描述:给控制面板添加一个自定义的样式。]]></description>
+		</attribute>
+		<attribute>
+			<name>fit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:铺满浏览器; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true时，控制面板的大小将铺满它所在的容器（浏览器）。]]></description>
+		</attribute>
+		<attribute>
+			<name>border</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:边框; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示控制面板边框。]]></description>
+		</attribute>
+		<attribute>
+			<name>doSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:调整大小; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，在控制面板被创建时将被重置大小并且自动布局。]]></description>
+		</attribute>
+		<attribute>
+			<name>noheader</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:无头部; 类型:boolean（布尔型）; 默认值:false; 描述:如果设置为true，控制面板头部将不被创建。]]></description>
+		</attribute>
+		<attribute>
+			<name>content</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:内容; 类型:string（字符串）; 默认值:null; 描述:控制面板主体的内容。]]></description>
+		</attribute>
+		<attribute>
+			<name>collapsible</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可折叠; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示可折叠按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最小化; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示最小化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>maximizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最大化; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示最大化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>closable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:关闭; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示关闭按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>tools</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:工具栏; 类型:array（数组）; 默认值:[]; 描述:自定义工具栏，每一个工具都可以包含2个属性：图标类 和句柄。]]></description>
+		</attribute>
+		<attribute>
+			<name>collapsed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已折叠; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否折叠。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已最小化; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否最小化。]]></description>
+		</attribute>
+		<attribute>
+			<name>maximized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已最大化; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否最大化。]]></description>
+		</attribute>
+		<attribute>
+			<name>closed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已关闭; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:超链接; 类型:string（字符串）; 默认值:null; 描述:载入远程数据的超链接，载入的数据将显示在控制面板中。]]></description>
+		</attribute>
+		<attribute>
+			<name>cache</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:缓存; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，从超链接载入的数据将被缓存。]]></description>
+		</attribute>
+		<attribute>
+			<name>loadingMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:载入时信息; 类型:string（字符串）; 默认值:Loading…; 描述:在正在载入远程数据时显示在控制面板中的信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>extractor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:提取器; 类型:function（函数）; 默认值:; 描述:定义如何从ajax返回值中提取内容,返回被提取的数据。 
+
+extractor: function(data){
+
+				var pattern = /<body[^>]*>((.|[\n\r])*)<\/body>/im;
+
+				var matches = pattern.exec(data);
+
+				if (matches){
+
+					return matches[1];	// only extract body content
+
+				} else {
+
+					return data;
+
+				}
+
+}
+			]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoad</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoad; 参数:none; 描述:在远程数据被载入时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeOpen; 参数:none; 描述:在控制面板被打开之前触发，返回false将停止打开。]]></description>
+		</attribute>
+		<attribute>
+			<name>onOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onOpen; 参数:none; 描述:在控制面板被打开之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeClose; 参数:none; 描述:在控制面板被关闭之前触发，返回false将取消关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>onClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onClose; 参数:none; 描述:在控制面板被关闭后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeDestroy; 参数:none; 描述:在控制面板被注销前触发，返回false将取消注销。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDestroy; 参数:none; 描述:在控制面板被注销后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeCollapse; 参数:none; 描述:在控制面板被折叠之前触发，返回false将停止折叠。]]></description>
+		</attribute>
+		<attribute>
+			<name>onCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onCollapse; 参数:none; 描述:在控制面板被折叠之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeExpand; 参数:none; 描述:在控制面板被扩展之前触发，返回false将停止扩展（这里应该是指扩展区域，宽、高等）。]]></description>
+		</attribute>
+		<attribute>
+			<name>onExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onExpand; 参数:none; 描述:在控制面板被扩展之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onResize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onResize; 参数:width, height; 描述:在控制面板被缩放后触发。 width： 新的控制面板宽度 height：新的控制面板高度]]></description>
+		</attribute>
+		<attribute>
+			<name>onMove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMove; 参数:left,top; 描述:在控制面板被移动后触发。 left：新的控制面板左边距 top：新的控制面板顶边距]]></description>
+		</attribute>
+		<attribute>
+			<name>onMaximize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMaximize; 参数:none; 描述:在控制面板被最大化后触发]]></description>
+		</attribute>
+		<attribute>
+			<name>onRestore</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onRestore; 参数:none; 描述:在控制面板被重置为初始大小后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onMinimize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMinimize; 参数:none; 描述:在控制面板被最小化后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>selected</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:被选择; 类型:boolean（布尔型）; 默认值:false; 描述:可设置为true将默认展开面板。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSelect; 参数:title; 描述:当一个可伸缩面板被选择时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onAdd</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onAdd; 参数:title; 描述:在一个新面板被添加时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeRemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeRemove; 参数:title; 描述:在可伸缩面板被移除之前触发，返回false将取消移除。]]></description>
+		</attribute>
+		<attribute>
+			<name>onRemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onRemove; 参数:title; 描述:在一个可伸缩面板被移除时触发。]]></description>
+		</attribute>
+
+	</tag>
+	<tag>
+		<name>form</name>
+		<tag-class>com.smartdp.tag.easyui.FormTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>form</display-name>
+		<description><![CDATA[表单。方法[名称:参数:描述]:submit:options:执行表单提交，options参数是一个包含以下属性的对象： url：表单提交的目标网址 onSubmit：在表单提交之前执行的回调函数 success: 在表单成功提交后执行的回调函数;load:data:载入记录填充表单。 data参数可以是字符串或者对象类型，当传入字符串时，data参数必须是一个远程url地址，否则用户必须自定义要载入的数据;clear:none:清除表单数据;validate:none:执行表单域验证，如果全部表单域有效返回true，该方法与表单验证插件一起使用。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:目标网址; 类型:string（字符串）; 默认值:null; 描述:表单提交的目标网址]]></description>
+		</attribute>
+		<attribute>
+			<name>onSubmit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSubmit; 参数:none; 描述:在表单提交之前触发，返回false将阻止表单提交。]]></description>
+		</attribute>
+		<attribute>
+			<name>success</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:success; 参数:data; 描述:当表单成功提交时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeLoad</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeLoad; 参数:param; 描述:在发送载入远程数据请求之前触发，返回false将取消请求。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoadSuccess</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoadSuccess; 参数:data; 描述:在表单数据被载入时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoadError</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoadError; 参数:none; 描述:在载入表单数据发生错误时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>menu</name>
+		<tag-class>com.smartdp.tag.easyui.MenuTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>menu</display-name>
+		<description><![CDATA[菜单。方法[名称:参数:描述]:show:pos:在一个特定的位置显示菜单。 pos参数有2个属性： left：新的左边距。 top：新的顶边距。;hide:none:隐藏一个菜单。;getItem:itemEl:获取菜单项数据并将其返回, 数据包含以下属性： target：DOM对象，菜单项目。 id：字符串，分配给元素的ID。 text：字符串，菜单项的文本。 href：字符串，超链接地址。 disabled：布尔型，菜单项是启用还是禁用。 onclick：函数, 当用户点击菜单时将要执行的函数。 iconCls：字符串，图标css类。;setText:param:设置特定的菜单文本，'param'参数包含2个属性： target：DOM对象，将要被设置的菜单项。 text：字符串，新的文本值。;setIcon:param:设置特定的菜单项图标，'param'参数包含2个属性： target：DOM对象，菜单项目。 iconCls: 新的图标css类。;findItem:text:查找特定的菜单项，和getItem方法返回的对象相同。;appendItem:param:添加菜单，'param'参数包含以下属性： parent: 待添加新菜单的DOM对象，如果没有被设置，新菜单项将会被作为顶级菜单添加。 text：字符串，菜单项文本。 href：字符串，超链接地址。 onclick：字符串或者函数，当用户点击菜单项时将要被执行的脚本代码或者函数。 iconCls: string, the icon class.;removeItem:itemEl:移除特定的菜单项。;enableItem:itemEl:启用菜单项。;disableItem:itemEl:禁用菜单项。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>zIndex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:堆叠顺序; 类型:number（数字）; 默认值:110000; 描述:菜单的z-index样式,从第一个菜单开始递增。]]></description>
+		</attribute>
+		<attribute>
+			<name>left</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:左边距; 类型:number（数字）; 默认值:0; 描述:菜单的左边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>top</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:顶边距; 类型:number; 默认值:0; 描述:菜单的顶边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>onShow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onShow; 参数:none; 描述:当一个菜单被显示后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onHide</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onHide; 参数:none; 描述:在一个菜单被隐藏后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onClick; 参数:item; 描述:当一个菜单被点击时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>datetimebox</name>
+		<tag-class>com.smartdp.tag.easyui.DatetimeboxTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>datetimebox</display-name>
+		<description><![CDATA[日期时间组合框]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>showSeconds</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:显示秒; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示秒数信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:options; 参数:none; 描述:返回属性对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>spinner</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:spinner; 参数:none; 描述:返回时间调节器对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>setValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:setValue; 参数:value; 描述:设置日期时间组合框的值。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>datebox</name>
+		<tag-class>com.smartdp.tag.easyui.DateboxTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>datebox</display-name>
+		<description><![CDATA[日期组合框。方法[名称:参数:描述]:options:none:返回属性对象。;calendar:none:获取日历对象。;setValue:value:设置日期组合框的值。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[name]]></description>
+		</attribute>
+		<attribute>
+			<name>panelWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:面板宽度; 类型:number（数字）; 默认值:180; 描述:下拉日历面板的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>panelHeight</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:面板高度; 类型:number（数字）; 默认值:auto; 描述:下拉日历面板的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>currentText</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:当前文本; 类型:string（字符串）; 默认值:Today; 描述:显示在日历左下角用以选择今天日期的按钮上的文本。]]></description>
+		</attribute>
+		<attribute>
+			<name>closeText</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:关闭; 类型:string（字符串）; 默认值:Close; 描述:显示在关闭按钮上的文本。]]></description>
+		</attribute>
+		<attribute>
+			<name>okText</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:OK按钮文本; 类型:string（字符串）; 默认值:Ok; 描述:显示在OK按钮上的文本。]]></description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:禁用; 类型:boolean（布尔型）; 默认值:false; 描述:当设置为true时禁用输入框。]]></description>
+		</attribute>
+		<attribute>
+			<name>formatter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:格式; 类型:function（函数）; 默认值:; 描述:一个格式化日期的函数，该函数的参数是一个被选择的日期并且一个字符串。]]></description>
+		</attribute>
+		<attribute>
+			<name>parser</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:解析器; 类型:function（函数）; 默认值:; 描述:一个解析日期的字符串，该函数的参数是一个被选择的日期并且返回一个解析后的日期值。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSelect; 参数:date; 描述:当用户选择日期时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>linkbutton</name>
+		<tag-class>com.smartdp.tag.easyui.LinkbuttonTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>linkbutton</display-name>
+		<description><![CDATA[链接按钮]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:ID; 类型:string（字符串）; 默认值:null; 描述:分配给该组件的ID。]]></description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:禁用; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true将禁用按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>plain</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:简洁模式; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true将显示简洁效果。]]></description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:文本; 类型:string（字符串）; 默认值:''; 描述:显示在按钮上的文本。]]></description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:图标CSS类; 类型:string（字符串）; 默认值:null; 描述:用来在左边显示一个16x16大小图标的css类。]]></description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:options; 参数:none; 描述:返回属性对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>disable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:disable; 参数:none; 描述:禁用按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>enable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:enable; 参数:none; 描述:启用按钮。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>spinner</name>
+		<tag-class>com.smartdp.tag.easyui.SpinnerTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>spinner</display-name>
+		<description><![CDATA[调节器。方法[名称:参数:描述]:options:none:返回属性对象。;destroy:none:销毁组件。;resize:width:调整组件宽度。;enable:none:启用组件。;disable:none:禁用组件。;getValue:none:获取组件的值。;setValue:value:设置组件的值。;clear:none:清除组件的值。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:组件的宽度]]></description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:值; 类型:string（字符串）; 默认值:; 描述:初始值。]]></description>
+		</attribute>
+		<attribute>
+			<name>min</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最小值; 类型:string（字符串）; 默认值:null; 描述:允许的最小值。]]></description>
+		</attribute>
+		<attribute>
+			<name>max</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最大值; 类型:string（字符串）; 默认值:null; 描述:允许的最大值。]]></description>
+		</attribute>
+		<attribute>
+			<name>increment</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:增量; 类型:number（数字）; 默认值:1; 描述:当点击调节器按钮时的增量值。]]></description>
+		</attribute>
+		<attribute>
+			<name>editable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可编辑; 类型:boolean（布尔型）; 默认值:true; 描述:定义用户是否可以直接输入。]]></description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:禁用; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否禁用输入框。]]></description>
+		</attribute>
+		<attribute>
+			<name>spin</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:调节函数; 类型:function(down); 默认值:; 描述:当用户点击调节按钮时调用的函数。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSpinUp</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSpinUp; 参数:none; 描述:当用户点击增加按钮时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSpinDown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSpinDown; 参数:none; 描述:当用户点击减少按钮时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>window</name>
+		<tag-class>com.smartdp.tag.easyui.WindowTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>window</display-name>
+		<description><![CDATA[窗口]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:标题; 类型:string（字符串）; 默认值:New Window; 描述:窗口的标题。]]></description>
+		</attribute>
+		<attribute>
+			<name>collapsible</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可折叠; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示折叠按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最小化; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示最小化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>maximizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最大化; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示最大化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>closable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:关闭; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示关闭按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>closed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已关闭; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否在初始化组件时关闭（隐藏）窗口]]></description>
+		</attribute>
+		<attribute>
+			<name>zIndex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:堆叠顺序; 类型:number（数字）; 默认值:9000; 描述:窗口的堆叠顺序，从第一个窗口的zIndex值开始递增。]]></description>
+		</attribute>
+		<attribute>
+			<name>draggable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可拖放; 类型:boolean（布尔型）; 默认值:true; 描述:定义窗口是否可以被拖放。]]></description>
+		</attribute>
+		<attribute>
+			<name>resizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可缩放; 类型:boolean（布尔型）; 默认值:true; 描述:定义窗口是否可以被缩放。]]></description>
+		</attribute>
+		<attribute>
+			<name>shadow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:阴影; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，显示窗口的时候将显示阴影。]]></description>
+		</attribute>
+		<attribute>
+			<name>inline</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:行内显示; 类型:boolean（布尔型）; 默认值:false; 描述:定义如何布局窗口，如果设置为true，窗口将显示在它的父容器中，否则将显示在所有元素的上面。]]></description>
+		</attribute>
+		<attribute>
+			<name>modal</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:遮罩; 类型:boolean（布尔型）; 默认值:true; 描述:定义窗口是否带有遮罩效果。]]></description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:图标CSS类; 类型:string（字符串）; 默认值:null; 描述:在控制面板标题前显示一个16x16大小图标的CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:高度; 类型:number（数字）; 默认值:auto; 描述:设置控制面板的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>left</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:左边距; 类型:number（数字）; 默认值:null; 描述:设置控制面板的左边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>top</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:顶边距; 类型:number（数字）; 默认值:null; 描述:设置控制面板的顶边距。]]></description>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:类; 类型:string（字符串）; 默认值:null; 描述:对控制面板引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>headerCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:头部css类; 类型:string（字符串）; 默认值:null; 描述:对控制面板头部引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>bodyCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:主体类; 类型:string（字符串）; 默认值:null; 描述:对控制面板主体引用一个CSS类。]]></description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:样式; 类型:object（对象）; 默认值:{}; 描述:给控制面板添加一个自定义的样式。]]></description>
+		</attribute>
+		<attribute>
+			<name>fit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:铺满浏览器; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true时，控制面板的大小将铺满它所在的容器（浏览器）。]]></description>
+		</attribute>
+		<attribute>
+			<name>border</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:边框; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示控制面板边框。]]></description>
+		</attribute>
+		<attribute>
+			<name>doSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:调整大小; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，在控制面板被创建时将被重置大小并且自动布局。]]></description>
+		</attribute>
+		<attribute>
+			<name>noheader</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:无头部; 类型:boolean（布尔型）; 默认值:false; 描述:如果设置为true，控制面板头部将不被创建。]]></description>
+		</attribute>
+		<attribute>
+			<name>content</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:内容; 类型:string（字符串）; 默认值:null; 描述:控制面板主体的内容。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最小化; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否显示最小化按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>tools</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:工具栏; 类型:array（数组）; 默认值:[]; 描述:自定义工具栏，每一个工具都可以包含2个属性：图标类 和句柄。]]></description>
+		</attribute>
+		<attribute>
+			<name>collapsed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已折叠; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否折叠。]]></description>
+		</attribute>
+		<attribute>
+			<name>minimized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已最小化; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否最小化。]]></description>
+		</attribute>
+		<attribute>
+			<name>maximized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:已最大化; 类型:boolean（布尔型）; 默认值:false; 描述:定义控制面板初始化时是否最大化。]]></description>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:超链接; 类型:string（字符串）; 默认值:null; 描述:载入远程数据的超链接，载入的数据将显示在控制面板中。]]></description>
+		</attribute>
+		<attribute>
+			<name>cache</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:缓存; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置为true，从超链接载入的数据将被缓存。]]></description>
+		</attribute>
+		<attribute>
+			<name>loadingMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:载入时信息; 类型:string（字符串）; 默认值:Loading…; 描述:在正在载入远程数据时显示在控制面板中的信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>extractor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:提取器; 类型:function（函数）; 默认值:; 描述:定义如何从ajax返回值中提取内容,返回被提取的数据。 
+
+extractor: function(data){
+
+				var pattern = /<body[^>]*>((.|[\n\r])*)<\/body>/im;
+
+				var matches = pattern.exec(data);
+
+				if (matches){
+
+					return matches[1];	// only extract body content
+
+				} else {
+
+					return data;
+
+				}
+
+}
+			]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoad</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoad; 参数:none; 描述:在远程数据被载入时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeOpen; 参数:none; 描述:在控制面板被打开之前触发，返回false将停止打开。]]></description>
+		</attribute>
+		<attribute>
+			<name>onOpen</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onOpen; 参数:none; 描述:在控制面板被打开之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeClose; 参数:none; 描述:在控制面板被关闭之前触发，返回false将取消关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>onClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onClose; 参数:none; 描述:在控制面板被关闭后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeDestroy; 参数:none; 描述:在控制面板被注销前触发，返回false将取消注销。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDestroy; 参数:none; 描述:在控制面板被注销后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeCollapse; 参数:none; 描述:在控制面板被折叠之前触发，返回false将停止折叠。]]></description>
+		</attribute>
+		<attribute>
+			<name>onCollapse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onCollapse; 参数:none; 描述:在控制面板被折叠之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeExpand; 参数:none; 描述:在控制面板被扩展之前触发，返回false将停止扩展（这里应该是指扩展区域，宽、高等）。]]></description>
+		</attribute>
+		<attribute>
+			<name>onExpand</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onExpand; 参数:none; 描述:在控制面板被扩展之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onResize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onResize; 参数:width, height; 描述:在控制面板被缩放后触发。 width： 新的控制面板宽度 height：新的控制面板高度]]></description>
+		</attribute>
+		<attribute>
+			<name>onMove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMove; 参数:left,top; 描述:在控制面板被移动后触发。 left：新的控制面板左边距 top：新的控制面板顶边距]]></description>
+		</attribute>
+		<attribute>
+			<name>onMaximize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMaximize; 参数:none; 描述:在控制面板被最大化后触发]]></description>
+		</attribute>
+		<attribute>
+			<name>onRestore</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onRestore; 参数:none; 描述:在控制面板被重置为初始大小后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onMinimize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onMinimize; 参数:none; 描述:在控制面板被最小化后触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>numberbox</name>
+		<tag-class>com.smartdp.tag.easyui.NumberboxTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>numberbox</display-name>
+		<description><![CDATA[数字验证框]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:禁用; 类型:boolean（布尔型）; 默认值:false; 描述:定义是否禁用输入框。]]></description>
+		</attribute>
+		<attribute>
+			<name>min</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最小值; 类型:number（数字）; 默认值:null; 描述:允许的最小值。]]></description>
+		</attribute>
+		<attribute>
+			<name>max</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:最大值; 类型:number（数字）; 默认值:null; 描述:允许的最大值。]]></description>
+		</attribute>
+		<attribute>
+			<name>precision</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:精度; 类型:number（数字）; 默认值:0; 描述:精确到小数点后的最大位数。]]></description>
+		</attribute>
+		<attribute>
+			<name>disable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:disable; 参数:none; 描述:禁用输入框。]]></description>
+		</attribute>
+		<attribute>
+			<name>enable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:enable; 参数:none; 描述:启用输入框。]]></description>
+		</attribute>
+		<attribute>
+			<name>fix</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:fix; 参数:none; 描述:将输入框的值修正为一个有效值。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>combogrid</name>
+		<tag-class>com.smartdp.tag.easyui.CombogridTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>combogrid</display-name>
+		<description><![CDATA[组合表格]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[name]]></description>
+		</attribute>
+		<attribute>
+			<name>loadMsg</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:载入时信息; 类型:string（字符串）; 默认值:null; 描述:当数据表格载入远程数据时的提示信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>idField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:id字段; 类型:string（字符串）; 默认值:null; 描述:标识表格行数据唯一性的字段名。]]></description>
+		</attribute>
+		<attribute>
+			<name>textField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:文本域; 类型:string（字符串）; 默认值:null; 描述:显示在文本框中的文本域的名称。]]></description>
+		</attribute>
+		<attribute>
+			<name>mode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:模式; 类型:string（字符串）; 默认值:local; 描述:定义当文本发生改变时如何载入组合表格的数据。如果组合表格要从远程服务器载入数据，设置为'remote'。]]></description>
+		</attribute>
+		<attribute>
+			<name>filter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:过滤器; 类型:function(q, row); 默认值:; 描述:定义当模式设置为'local'时如何选择本地数据，返回true将选择一行。]]></description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:options; 参数:none; 描述:返回属性对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>grid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:grid; 参数:none; 描述:返回数据表格对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>setValues</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:setValues; 参数:values; 描述:设置组合框的值，参数values是一个数组。]]></description>
+		</attribute>
+		<attribute>
+			<name>setValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:setValue; 参数:value; 描述:设置组合框的值]]></description>
+		</attribute>
+		<attribute>
+			<name>clear</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:clear; 参数:none; 描述:清除组合框的值。]]></description>
+		</attribute>
+		<attribute>
+			<name>panelWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[]]></description>
+		</attribute>
+		<attribute>
+			<name>multiple</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[]]></description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[]]></description>
+		</attribute>
+		<attribute>
+			<name>method</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[]]></description>
+		</attribute>
+		<attribute>
+			<name>columns</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>pagination</name>
+		<tag-class>com.smartdp.tag.easyui.PaginationTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>pagination</display-name>
+		<description><![CDATA[分页。方法[名称:参数:描述]:options:none:返回分页属性对象。;loading:none:提醒分页插件正在载入。;loaded:none:提醒分页插件已经载入。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>total</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:总数; 类型:number（数字）; 默认值:1; 描述:总记录数，当创建分页时必须设置。]]></description>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:每页记录数; 类型:number（数字）; 默认值:10; 描述:每页显示的记录数。]]></description>
+		</attribute>
+		<attribute>
+			<name>pageNumber</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:当前页码; 类型:number（数字）; 默认值:1; 描述:当分页创建完毕时显示当前页码。]]></description>
+		</attribute>
+		<attribute>
+			<name>pageList</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:可选择的每页记录数; 类型:array（数组）; 默认值:[10,20,30,50]; 描述:用户能够改变每页显示的记录数。]]></description>
+		</attribute>
+		<attribute>
+			<name>loading</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:是否正在载入; 类型:boolean（布尔型）; 默认值:false; 描述:定义数据是否正在载入。]]></description>
+		</attribute>
+		<attribute>
+			<name>buttons</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:按钮; 类型:array（数组）; 默认值:null; 描述:自定义按钮，每个按钮包含2个属性: iconCls： 显示背景图片的CSS类 handler： 当按钮被点击时调用的一个句柄函数]]></description>
+		</attribute>
+		<attribute>
+			<name>showPageList</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:显示可选择的每页记录数; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示可选择的每页记录数。]]></description>
+		</attribute>
+		<attribute>
+			<name>showRefresh</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:显示刷新; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否显示刷新按钮。]]></description>
+		</attribute>
+		<attribute>
+			<name>beforePageText</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:输入框之前的文本; 类型:string（字符串）; 默认值:Page; 描述:在输入框之前显示的符号。]]></description>
+		</attribute>
+		<attribute>
+			<name>afterPageText</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:输入框之后的文本; 类型:string（字符串）; 默认值:of {pages}; 描述:在输入框之后显示的符号。]]></description>
+		</attribute>
+		<attribute>
+			<name>displayMsg</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:显示信息; 类型:string（字符串）; 默认值:Displaying {from} to {to} of {total} items; 描述:在插件右上方显示分页信息。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSelectPage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSelectPage; 参数:pageNumber, pageSize; 描述:当用户进行翻页时触发，回调函数包含2个参数: pageNumber： 下一页的页码 pageSize： 下一页的显示记录数]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeRefresh</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeRefresh; 参数:pageNumber, pageSize; 描述:刷新之前触发, 返回false将取消刷新。]]></description>
+		</attribute>
+		<attribute>
+			<name>onRefresh</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onRefresh; 参数:pageNumber, pageSize; 描述:刷新之后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onChangePageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onChangePageSize; 参数:pageSize; 描述:当用户修改每页显示记录数时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>parser</name>
+		<tag-class>com.smartdp.tag.easyui.ParserTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>parser</display-name>
+		<description><![CDATA[语法解析。方法[名称:参数:描述]:$.parser.parse:context:解析easyui组件。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>$.parser.auto</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:$.parser.auto; 类型:boolean（布尔型）; 默认值:true; 描述:定义是否自动解析easyui组件。]]></description>
+		</attribute>
+		<attribute>
+			<name>$.parser.onComplete</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:$.parser.onComplete; 参数:context; 描述:当语法解析结束时触发事件。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>draggable</name>
+		<tag-class>com.smartdp.tag.easyui.DraggableTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>draggable</display-name>
+		<description><![CDATA[一般拖动。方法[名称:参数:描述]:options:none:返回属性对象。;proxy:none:如果替代元素被设置，返回将被用于拖动的替代元素。;enable:none:允许拖动。;disable:none:禁止拖动。;]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>proxy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:替代; 类型:string,function; 默认值:null; 描述:拖动时的替代元素，当被设置为'clone'时，将使用该元素的一个复制元素来作为替代元素。如果指定了一个函数, 它将返回一个jquery对象。]]></description>
+		</attribute>
+		<attribute>
+			<name>revert</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:复原; 类型:boolean（布尔型）; 默认值:false; 描述:如果设置为true, 当拖动停止时元素将返回它的初始位置。]]></description>
+		</attribute>
+		<attribute>
+			<name>cursor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:指针; 类型:string（字符串）; 默认值:move; 描述:拖动时的CSS指针。]]></description>
+		</attribute>
+		<attribute>
+			<name>deltaX</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:水平增量，X轴; 类型:number（数字）; 默认值:null; 描述:被拖动元素对应于当前指针的水平位置。]]></description>
+		</attribute>
+		<attribute>
+			<name>deltaY</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:垂直增量，y轴; 类型:number（数字）; 默认值:null; 描述:被拖动元素对应于当前指针的垂直位置。]]></description>
+		</attribute>
+		<attribute>
+			<name>handle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:句柄; 类型:selector（选择器）; 默认值:null; 描述:开始拖动的句柄。]]></description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:停止拖动; 类型:boolean（布尔型）; 默认值:false; 描述:当设置为true时停止拖动。]]></description>
+		</attribute>
+		<attribute>
+			<name>edge</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:边缘; 类型:number（数字）; 默认值:0; 描述:可以在其中拖动的容器的宽度]]></description>
+		</attribute>
+		<attribute>
+			<name>axis</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:拖动轴; 类型:string（字符串）; 默认值:null; 描述:可用值为'v'或者'h',当设置为空时，元素可以同时在水平和垂直方法拖动。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeDrag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeDrag; 参数:e; 描述:在拖动之前触发，返回false将取消拖动。]]></description>
+		</attribute>
+		<attribute>
+			<name>onStartDrag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onStartDrag; 参数:e; 描述:当目标对象开始被拖动时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onDrag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onDrag; 参数:e; 描述:在拖动过程中触发，当不能再拖动时返回false。]]></description>
+		</attribute>
+		<attribute>
+			<name>onStopDrag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onStopDrag; 参数:e; 描述:当拖动停止时触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>tabs</name>
+		<tag-class>com.smartdp.tag.easyui.TabsTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>tabs</display-name>
+		<description><![CDATA[选项卡]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:选项卡所在容器（控制面板）的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:高度; 类型:number（数字）; 默认值:auto; 描述:选项卡所在容器（控制面板）的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>plain</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:简洁模式; 类型:boolean（布尔型）; 默认值:false; 描述:如果设置为true，将不显示控制面板背景。]]></description>
+		</attribute>
+		<attribute>
+			<name>fit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:铺满浏览器; 类型:boolean（布尔型）; 默认值:false; 描述:设置为true时，选项卡的大小将铺满它所在的容器（浏览器）。]]></description>
+		</attribute>
+		<attribute>
+			<name>border</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:边框; 类型:boolean（布尔型）; 默认值:true; 描述:如果设置true，将显示选项卡所在容器（控制面板）的边框。]]></description>
+		</attribute>
+		<attribute>
+			<name>scrollIncrement</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:滚动增量; 类型:number（数字）; 默认值:100; 描述:选项卡滚动条每次滚动的像素值。]]></description>
+		</attribute>
+		<attribute>
+			<name>scrollDuration</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:滚动时间; 类型:number（数字）; 默认值:400; 描述:每次滚动持续的时间，单位为毫秒。]]></description>
+		</attribute>
+		<attribute>
+			<name>tools</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:工具栏; 类型:array（数组）; 默认值:null; 描述:控制面板右侧的工具栏，每个工具选项都跟链接按钮一样。]]></description>
+		</attribute>
+		<attribute>
+			<name>onLoad</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onLoad; 参数:panel; 描述:当一个选项卡完成ajax远程载入对象时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onSelect; 参数:title; 描述:当用户选择一个选项卡时触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onBeforeClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onBeforeClose; 参数:title; 描述:在一个选项卡被关闭之前触发，返回false将取消关闭。]]></description>
+		</attribute>
+		<attribute>
+			<name>onClose</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onClose; 参数:title; 描述:在用户关闭一个选项卡面板后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onAdd</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onAdd; 参数:title; 描述:在一个选项卡面板被添加后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onUpdate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onUpdate; 参数:title; 描述:在一个选项卡面板被更新后触发。]]></description>
+		</attribute>
+		<attribute>
+			<name>onContextMenu</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[事件名:onContextMenu; 参数:e, title; 描述:在一个选项卡面板被鼠标右键单击后触发。]]></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>tab</name>
+		<tag-class>com.smartdp.tag.easyui.TabTag</tag-class>
+		<body-content>JSP</body-content>
+		<display-name>tab</display-name>
+		<description><![CDATA[选项卡面板]]></description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[ID]]></description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:宽度; 类型:number（数字）; 默认值:auto; 描述:选项卡所在容器（控制面板）的宽度。]]></description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:高度; 类型:number（数字）; 默认值:auto; 描述:选项卡所在容器（控制面板）的高度。]]></description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:标题; 类型:string（字符串）; 默认值:; 描述:选项卡面板的标题。]]></description>
+		</attribute>
+		<attribute>
+			<name>content</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:内容; 类型:string（字符串）; 默认值:;默认值:; 描述:选项卡面板的内容。]]></description>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:超链接; 类型:string（字符串）; 默认值:;默认值:null;  描述:从超链接载入远程内容到选项卡 面板。]]></description>
+		</attribute>
+		<attribute>
+			<name>cache</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:缓存;  类型:boolean（布尔型）; 默认值:true; 描述:设置为true将缓存选项卡面板，当href（超链接）属性被设置时有效。]]></description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[属性名:图标CSS类; 类型:string（字符串）; 默认值:null;默认值:; 描述:一个显示选项卡面板标题图标的CSS类。]]></description>
+		</attribute>
+	</tag>
+</taglib>

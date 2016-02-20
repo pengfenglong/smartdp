@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="cms" extends="json-default" namespace="/api/cms">
+		<action name="list_all_channel_by_site" class="cms-CmsAPIAction"
+			method="listAllChannelBySite">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="list_article_by_channel" class="cms-CmsAPIAction"
+			method="listArticleByChannel">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="get_article" class="cms-CmsAPIAction"
+			method="getArticle">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<link rel="stylesheet" type="text/css"
+	href="./resources/layout_head1e21b3.css">
+<link rel="stylesheet" type="text/css"
+	href="./resources/base1e2236.css">
+<link rel="stylesheet" type="text/css"
+	href="./resources/lib1e21a3.css">
+
+
+<link rel="stylesheet" type="text/css"
+	href="./resources/setting_common1e21a3.css">
+<link rel="stylesheet" type="text/css"
+	href="./resources/setting_index1e21b3.css">
+<link rel="stylesheet" type="text/css"
+	href="./resources/jquery.Jcrop.min1ddd38.css">
+<link rel="stylesheet" type="text/css"
+	href="./resources/processor_bar1e21b3.css">
+
+
+
+
+<div class="col_main">
+
+	<div class="main_hd">
+		<h2>账号：<input /> 密码：<input type="password"/> <button>确定</button></h2>
+	</div>
+
+	<div class="main_bd">
+		<div class="account_setting_area" id="settingArea">
+			<ul>
+
+				<li class="account_setting_item">
+					<h4>头像</h4>
+					<div class="meta_content">
+						<img class="avatar" src="./resources/getheadimg(1)">
+					</div>
+				</li>
+
+				<li class="account_setting_item">
+					<h4>名称</h4>
+					<div class="meta_opr"></div>
+					<div class="meta_content">pengfenglong</div>
+				</li>
+
+				<li class="account_setting_item">
+					<h4>原始ID</h4>
+					<div class="meta_opr"></div>
+					<div class="meta_content">
+						<span>gh_bd94e5ec0a65</span>
+					</div>
+				</li>
+
+				<li class="account_setting_item">
+					<h4>微信号</h4>
+					<div class="meta_opr"></div>
+					<div class="meta_content">
+						<span>peng_fenglong</span>
+					</div>
+				</li>
+
+				<li class="account_setting_item">
+					<h4>隐私设置</h4>
+					<div class="meta_opr">
+						<a href="javascript:;" id="Js_privacy">设置</a>
+					</div>
+					<div class="meta_content">
+						<span id="Js_privacyStatus"> 已允许 </span> <span class="tips">（是否允许用户通过昵称搜到该帐号,但通过id和二维码可以搜到）</span>
+					</div>
+				</li>
+
+				<li class="account_setting_item">
+					<h4>类型</h4>
+					<div class="meta_opr">
+						<div class="modify_wrapper">
+							<a
+								href="https://mp.weixin.qq.com/cgi-bin/frame?token=979944221&t=setting/upgrade_notes_frame&lang=zh_CN">升级为服务号</a>
+						</div>
+					</div>
+					<div class="meta_content">订阅号</div>
+				</li>
+
+
+
+				<li class="account_setting_item">
+					<h4>认证情况</h4>
+					<div class="meta_opr verify">
+						<a href="javascript:;" id="Js_weiboVerify">关联微博认证</a> <a
+							href="https://mp.weixin.qq.com/merchant/store?action=detail&t=wxverify/detail&info=verify&lang=zh_CN&token=979944221">申请微信认证</a>
+					</div>
+					<div class="meta_content">未认证</div>
+				</li>
+
+
+
+
+
+
+				<li class="account_setting_item">
+					<h4>地区</h4>
+					<div class="meta_opr">
+						<a
+							href="https://mp.weixin.qq.com/cgi-bin/settingpage?action=sosomap&lang=zh_CN&token=979944221">设置</a>
+					</div>
+					<div class="meta_content"></div>
+				</li>
+
+
+
+				<li class="account_setting_item">
+					<h4>功能介绍</h4>
+					<div class="meta_opr">
+						<p>
+							<a id="modifyUserInfo" href="javascript:;" class="">修改</a>
+						</p>
+						<p class="desc">(一个月内功能介绍只能申请修改一次)</p>
+					</div>
+
+					<div class="meta_content">百事通，行天下</div>
+				</li>
+
+
+
+				<li class="account_setting_item">
+					<h4>腾讯微博</h4>
+					<div class="meta_opr">
+						<a class="btnGrayS btnGraySIcon" id="bindTencentMicroblog"
+							href="https://open.t.qq.com/cgi-bin/oauth2/authorize?client_id=801271399&response_type=code&redirect_uri=https%3A%2F%2Fmp.weixin.qq.com%2Fmisc%2Fsetsyncweibo%3Ftype%3Dbind%26from%3Duserinfopage%26token%3D979944221">现在绑定</a>
+					</div>
+					<div class="meta_content">
+						未绑定
+						<p class="desc">绑定腾讯微博后，你可以将群发的消息同步到腾讯微博。</p>
+					</div>
+				</li>
+
+
+
+				<li class="account_setting_item">
+					<h4>二维码</h4>
+					<div class="meta_opr">
+						<a id="more_size" href="javascript:;">更多尺寸</a>
+					</div>
+					<div class="meta_content">
+						<a target="_blank" class="verifyInfo" title="点击下载"
+							href="https://mp.weixin.qq.com/misc/getqrcode?fakeid=2393559041&token=979944221&style=1&action=download">
+							<img src="./resources/getqrcode" width="150">
+						</a>
+					</div>
+				</li>
+
+
+				<li class="account_setting_item no_extra">
+					<h4>图片水印</h4>
+					<div class="meta_opr">
+						<a id="changeWaterMark" href="javascript:;">设置</a>
+					</div>
+					<div class="meta_content">
+						<p>使用微信号作为水印</p>
+
+
+					</div>
+				</li>
+
+
+
+
+			</ul>
+
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

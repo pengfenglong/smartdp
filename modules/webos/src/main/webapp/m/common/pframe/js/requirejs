@@ -1,0 +1,315 @@
+
+
+
+/**
+ * require 1.0.0
+ * 动态js加载器
+ */
+window.require = function(){
+	var doc = document,head = doc.getElementsByTagName("head")[0];
+	//当前脚本的script节点、require.js所在网站目录
+	var jsNode = doc.getElementsByTagName("script"),path = jsNode[jsNode.length-1].src.split(/\?/)[0].replace(/[^\/]*$/,"");
+
+	//========================= 异步加载脚本 =============================
+	//堆栈是否执行过
+	var stackFlag = 1;
+	//按需加载堆栈(url)
+	var stackJSs = [];
+	//按需加载堆栈(回调)
+	var stackBacks = [];
+	//已经加载完毕的js
+	var jsLoaded = {};
+
+	//进栈
+	function stackPush(urls,callBack,charset){
+		callBack && stackBacks.push(callBack);
+		if(typeof urls == "string"){
+			stackJSs.push([urls,stackShift,charset]);
+		}
+		else{
+			for(var i=0;i<urls.length;i+=1){
+				stackJSs.push([urls[i],stackShift,charset]);
+			}
+		}
+		if(stackFlag==0){
+			stackFlag = 1;
+			stackShift();
+		}
+	}
+
+	//出栈
+	function stackShift(){
+		if(stackJSs.length){
+			disorderJS.apply(null,stackJSs.shift());
+		}
+		else if(stackBacks.length){
+			stackBacks.pop()();
+			stackShift();
+		}
+		else{
+			stackFlag = 0;
+		}
+	}
+
+
+
+	//加载script脚本
+	function loadJS(src,callBack,charset){
+		var url = src.replace(/^\.\//,path);
+		if(jsLoaded[url] === true){
+			setTimeout(function(){
+				callBack && callBack();
+			});
+			return ;
+		}
+
+		if(jsLoaded[url]){
+			callBack && jsLoaded[url].push([src,callBack]);
+			return ;
+		}
+		jsLoaded[url] = [[src,callBack]];
+		var t = doc.createElement("script");
+		t.setAttribute("type","text/javascript");
+		charset && t.setAttribute("charset",charset);
+		t.onreadystatechange = t.onload = t.onerror = function(){
+			if(!t.readyState || t.readyState == 'loaded' || t.readyState == 'complete'){
+				t.onreadystatechange = t.onload = t.onerror = null;
+				t = null;
+				setTimeout(function(){
+					var x = jsLoaded[url];
+					for(var i=0;i<x.length;i+=1){
+						x[i][1](x[i][0]);
+					}
+					jsLoaded[url] = true;
+				},100);
+			}
+		};
+		t.src = url;
+		head.appendChild(t);
+	}
+
+	//无序下载
+	function disorderJS(urls,callBack,charset){
+		if(typeof urls == "string"){
+			loadJS(urls,function(){
+				callBack && callBack();
+			},charset);
+			return require;
+		}
+		var led = {},loadBack = function (src){
+			delete led[src];
+			for(var n in led){
+				return ;
+			}
+			loadBack = function(){};
+			callBack && callBack();
+		}
+		for(var i=0;i<urls.length;i+=1){
+			led[urls[i]] = true;
+			loadJS(urls[i],loadBack,charset);
+		}
+		return require;
+	}
+
+	//domReady
+	function ready(){
+		//设置可以进行异步加载了
+		stackFlag = 0;
+		//出栈操作
+		stackShift();
+	}
+
+	//加入DOMContentLoaded事件
+	if(doc.attachEvent){//IE
+		doc.attachEvent("onreadystatechange",function(){
+			if(doc.readyState == "complete" || doc.readyState == "loaded"){
+				ready();
+			}
+		});
+	}
+	else{
+		doc.addEventListener("DOMContentLoaded", ready, false);
+	}
+
+	function require(){
+		var l = arguments.length;
+		if(l==1){
+			stackPush(arguments[0]);
+			return require;
+		}
+		l -= 1;
+		if(typeof arguments[l] == "function"){
+			stackPush(Array.prototype.slice.call(arguments,0,l),arguments[l]);
+			return require;
+		}
+		l -= 1;
+		if(arguments[l]==null || typeof arguments[l]){
+			stackPush(slice.call(arguments,0,l),arguments[l],arguments[l+1]);
+			return require;
+		}
+		stackPush(slice.call(arguments));
+		return require;
+	}
+
+	require.version = "1.0.1";
+	//对异步执行的函数 实现统一回调
+	//不保证内部加载完毕顺序
+	require.bale = function(){
+		var callBack = Array.prototype.pop.call(arguments);
+		//每个异步的回调
+		function back(){
+			len -= 1;
+			len==0 && setTimeout(function(){
+				callBack.apply(ex,bs);
+			});
+		}
+		//异步的长度、回调this指向、异步体的返回值
+		var len = arguments.length,ex = {},bs = [];
+		for(var i=0;i<arguments.length;i+=1){
+			bs[i] = arguments[i](back,ex);
+		}
+		return require;
+	};
+
+	return require;
+}();
+
+
+
+
+
+使用说明
+require(src,callBack,charset)
+序列化加载脚本，对依次压入的脚本序列化加载，等全部加载完毕后，序列化执行回调函数
+如果被加载的js中也使用require，则 这个js要执行完毕require的回调函数后，则表示加载OK
+src:js路径 可以为数组(数组中的元素为无序加载)
+callBack:全部js加载成功后 的回调
+charset:编码，默认和当前文档相同
+
+//加载 test.js
+require("test.js",funciton(){...});
+//加载 test.js test2.js 加载完毕test.js 后才加载test2.js 然后回调
+require("test.js","test2.js",funciton(){...});
+//同时加载 test.js test2.js 全部加载完毕后执行回调
+require(["test.js","test2.js"],funciton(){...});
+//先加载 test0.js 再同时加载 test.js test2.js 然后回调
+require("test0.js",["test.js","test.js","test.js","test2.js"],funciton(){...});
+//先加载 test4.js ./表示require.js所在目录 即test4.js和require.js在同一个目录
+//这个用于写库文件是使用
+require("./test0.js",funciton(){...});
+require.bale(fn1,fn1,...callBack)
+这个是为多个异步操作结束后 统一的有一个回调函数
+不保证内部异步操作按照顺序执行完毕
+最后一个参数是回调函数,其他的异步执行函数
+//Ajax加载数据以及加载插件Kite 两个全部好了之后，再执行回调函数
+require.bale(
+	function(fn,ex){
+		return ex.data = Ajax.get("jiffy.txt",fn);
+	},
+	function(fn,ex){
+		return Script.require("#UI/Kite",function(){
+			ex.kite = window.Kite;
+			fn();
+		});
+	},
+	function($1,$2){
+		/此时  this==ex $1==this.data.responseText $2==Script 
+		alert($1.responseText);
+		alert($2==Script);
+		
+		alert(Object.json(this.kite));
+		alert(this.data.responseText);
+	}
+);
+本页使用源码
+ //要打印 require.js 需要加载到脚本着色器(js) 和  require.js的文本数据（ajax）
+//第三个函数 就是两个异步完成后才回调的
+require.bale(function(end){
+  //异步加载着色脚本
+  require("/res/js/codeStyle.js",function(){
+    document.getElementById("jsCode").innerHTML = ScriptStyle.str2styled(document.getElementById("codejs").innerHTML.replace(/^\s+|\s+$/,""));
+    end();
+  });
+},function(end,ex){
+  //ajax获取require.js 文本数据
+  var xhr = new (window.XMLHttpRequest || ActiveXObject)("Microsoft.XMLHTTP");
+  xhr.open("GET", "require.js", true);
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState==4){
+      if(xhr.status >= 200 && xhr.status < 300 || xhr.status === 304 || xhr.status === 1223){
+        ex.text = xhr.responseText;
+      }
+      end();
+    }
+  };
+  xhr.send(null);
+},function(){
+  if(this.text){
+    document.getElementById("requireCode").innerHTML = ScriptStyle.str2styled(this.text.replace(/^\s+|\s+$/,""));
+    document.getElementById("requireCodeCot").style.display = "block";
+  }
+});
+//打印Script实例的log函数
+function requireLog(str){
+  var d = new Date();
+  document.getElementById("textarea").value += "[" + d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds() + "]" + str + "\n";
+}
+window.onload = function(){
+  //清空textarea的残渣
+  document.getElementById("textarea").value = "";
+};
+//异步加载脚本会自动加入到 按钮事件，请点击按钮
+document.getElementById("execBtn").onclick = function(){
+  this.style.display = "none";
+  
+  //序列加载 a.js [b.js c.js] d.js
+  //其中 b.js 中使用require 加载e.js f.js (e f为无须加载)
+  //e.js 中使用require 加载g.js
+  requireLog("=====================================require Log============");
+  requireLog("a.js b.js c.js d.js require OK");
+  //"testjs/b.js","testjs/b.js","testjs/b.js" 测试在写错的情况下，是否能修正
+  require("testjs/a.js",["testjs/b.js","testjs/b.js","testjs/b.js","testjs/c.js"],"testjs/d.js",function(){
+    requireLog("a.js b.js c.js d.js callBack OK");
+    //华丽分割线 3个随机异步，全部完成后统一回调
+    requireLog("=====================================bale Log============");
+    var t1 = Math.round(Math.random()*5000), t2 = Math.round(Math.random()*5000), t3 = Math.round(Math.random()*5000);
+    requireLog("Start=>t1:" + t1 + "==t2:" + t2 + "==t3:" + t3);
+    require.bale(
+      //第一个异步
+      function(fn,ex){
+        setTimeout(function(){
+          //设置cakkBack的this指向的object中的值
+          ex.$1 = t1;
+          //告诉函数，我的异步执行完毕 可以把这个fn直接设置为异步的回调函数
+          fn();
+          requireLog("t1:End");
+        },t1);
+        return 1;
+      },
+      //第二个异步
+      function(fn,ex){
+        setTimeout(function(){
+          ex.$2 = t2;
+          fn();
+          requireLog("t2:End");
+        },t2);
+        return 2;
+      },
+      //第三个异步
+      function(fn,ex){
+        setTimeout(function(){
+          ex.$3 = t3;
+          fn();
+          requireLog("t3:End");
+        },t3);
+        return 3;
+      },
+      //最后一个为执行完所有的异步的回调
+      function($1,$2,$3){
+        requireLog("AllEnd");
+        requireLog("argument=>$1:" + $1 + "==$2:" + $2 + "==$3:" + $3);
+        requireLog("this=>$1:" + this.$1 + "==$2:" + this.$2 + "==$3:" + this.$3);
+      }
+    );
+  });
+};

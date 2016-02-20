@@ -1,0 +1,21 @@
+<?xml version="1.0"?> 
+<!DOCTYPE hibernate-mapping PUBLIC 
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.acp.rae.entity.DataService" table="T_ACP_RAE_DATASERVICE">
+		<id name="id">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="name" column="name" type="java.lang.String"></property>
+		<property name="description" column="description" type="java.lang.String"></property>
+		<property name="executeSql" column="executesql" type="org.springframework.orm.hibernate3.support.ClobStringType"></property>
+        <many-to-one name="datasourceConfig" column="datasourceid" lazy="false" class="com.acp.rae.entity.DatasourceConfig"/>  
+		<list name="fieldMappings" inverse="true" cascade="all" lazy="false">
+			<key column="dataserviceid" not-null="true"/>
+			<index column="fieldorder"/>
+			<one-to-many class="com.acp.rae.entity.FieldMapping"/>
+		</list>
+
+	</class>
+</hibernate-mapping>

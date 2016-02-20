@@ -1,0 +1,82 @@
+[{
+    id: 1,
+    name: '服装',
+    code: 'f',
+    content: '',
+    children: [{
+        id: 11,
+        name: '衣服',
+        code: 'y',
+        content: '',
+		file:'shop.html',
+        children: []
+    }, {
+        id: 12,
+        name: '裤子',
+        code: 'k',
+        content: '',
+		file:'shop.html',
+        children: []
+    }, {
+        id: 13,
+        name: '鞋子',
+        code: 'x',
+        content: '',
+		file:'shop.html',
+        children: []
+    }]
+}, {
+    id: 2,
+    name: '电器',
+    code: 'd',
+    content: '',
+    children: [{
+        id: 21,
+        name: '冰箱',
+        code: 'b',
+        content: '',
+		file:'shop.html',
+        children: []
+    }, {
+        id: 22,
+        name: '洗衣机',
+        code: 'x',
+        content: '',
+		file:'shop.html',
+        children: []
+    }, {
+        id: 23,
+        name: '空调',
+        code: 'k',
+        content: '',
+		file:'shop.html',
+        children: []
+    }, {
+        id: 24,
+        name: '电视机',
+        code: 'd',
+        content: '',
+		file:'shop.html',
+        children: []
+    }]
+}, {
+    id: 3,
+    name: '母婴',
+    code: 'm',
+    content: '',
+    children: [{
+        id: 31,
+        name: '奶瓶',
+        code: 'n',
+        content: '',
+		file:'shop.html',
+        children: []
+    }, {
+        id: 32,
+        name: '奶粉',
+        code: 'n',
+        content: '',
+		file:'shop.html',
+        children: []
+    }]
+}]

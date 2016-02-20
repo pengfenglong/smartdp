@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<id>im</id>
+	<name>IM</name>
+	<catalog>sns</catalog>
+	<ico>Applications/Messaging alt.png</ico>
+	<explain>2012-08-14 08:48:10</explain>
+	<verify>0</verify>
+	<href>index.jsp</href>
+	<fullScreen>1</fullScreen>
+	<size>1</size>
+	<width>233px</width>
+	<height>588px</height>
+	<minWidth>300px</minWidth>
+	<minHeight>200px</minHeight>
+	<bodyBG></bodyBG>
+	<margin>50 5</margin>
+</applicationConfig>

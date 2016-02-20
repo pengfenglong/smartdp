@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="lib/jquery.ad-gallery.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/jquery.ad-gallery.js"></script>
+  <script type="text/javascript">
+  $(function() {
+  	$.ajax({
+		 url:'/smartdp/album-list-Photo.action',
+		 dataType:'json',
+		 success:function(data){
+	
+			 for(var i=0;i<data.length;i++){
+				 $('.ad-thumb-list').append('<li><a href="'+data[i]+'"><img style="width:60px;height:60px;" class="image'+i+'" src="'+data[i]+'" /></a></li>');
+			 }
+			 
+			 var galleries = $('.ad-gallery').adGallery();
+		 }
+	});
+    
+  });
+  </script>
+
+  <style type="text/css">
+  * {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, sans-serif;
+    color: #333;
+    line-height: 140%;
+  }
+  select, input, textarea {
+    font-size: 1em;
+  }
+  body {
+    padding: 5px;
+    font-size: 70%;
+    width: 98%px;
+  }
+  h2 {
+    margin-top: 1.2em;
+    margin-bottom: 0;
+    padding: 0;
+    border-bottom: 1px dotted #dedede;
+  }
+  h3 {
+    margin-top: 1.2em;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .example {
+    border: 1px solid #CCC;
+    background: #f2f2f2;
+    padding: 10px;
+  }
+  ul {
+    list-style-image:url(list-style.gif);
+  }
+  pre {
+    font-family: "Lucida Console", "Courier New", Verdana;
+    border: 1px solid #CCC;
+    background: #f2f2f2;
+    padding: 10px;
+  }
+  code {
+    font-family: "Lucida Console", "Courier New", Verdana;
+    margin: 0;
+    padding: 0;
+  }
+
+  #gallery {
+	margin:0 auto;
+    padding: 10px;
+    background: #FFFFFF;
+    width: 990px;
+  }
+  #descriptions {
+  }
+    #descriptions .ad-image-description {
+      position: absolute;
+    }
+      #descriptions .ad-image-description .ad-description-title {
+        display: block;
+      }
+  </style>
+  <title></title>
+</head>
+<body>
+  <div><a href="index.html" style="margin: 2px;">返回主页</a></div>
+  <div id="container">
+    <div id="gallery" class="ad-gallery">
+      <div class="ad-image-wrapper">
+      </div>
+      <div class="ad-controls">
+      </div>
+      <div class="ad-nav">
+        <div class="ad-thumbs">
+          <ul class="ad-thumb-list">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="descriptions"></div>
+  </div>
+</body>
+</html>

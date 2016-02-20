@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart type='table'>
+    
+    
+        <id>table-basic</id>
+        <!--分类-->
+        <catalog>表格</catalog>
+        <!--类型 -->
+        <type>table</type>
+        <!--子类型-->
+        <subType>table-basic</subType>
+        <!--名字-->
+        <name>表格</name>
+        <!--宽度 -->
+        <widthScale>3</widthScale>
+        <!--高度-->
+        <heightScale>1</heightScale>
+        <!--图标路径-->
+        <icon>grid.png</icon>
+    
+    <!--hightcharts配置信息(基于framemark) -->
+    <configuration>
+        <![CDATA[
+              {
+	"bJQueryUI": true,
+	 "sPaginationType": "two_button",
+	 "sScrollX": "100%",
+	 "bLengthChange": true,
+	 //"sScrollXInner": "110%",   //表格的内容宽度
+	 "sScrollY": "100%",
+	 "bFilter": false,
+	 "bPaginate": true,
+	 "bInfo": true, //显示表格信息
+	 "bScrollCollapse" : true,
+	 "oLanguage": {
+	      "sLengthMenu": "每页显示 _MENU_ 条记录",
+	      "sZeroRecords": "对不起，查询不到任何相关数据",
+	      "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+	      "sInfoEmtpy": "找不到相关数据",
+	      "sInfoFiltered": "数据表中共为 _MAX_ 条记录)",
+	      "sProcessing": "正在加载中...",
+	      "sSearch": "搜索",
+	      "sUrl": "", //多语言配置文件，可将oLanguage的设置放在一个txt文件中，例：Javascript/datatable/dtCH.txt
+	      "oPaginate": {
+	          "sFirst":    "第一页",
+	          "sPrevious": " 上一页 ",
+	          "sNext":     " 下一页 ",
+	          "sLast":     " 最后一页 "
+	      }
+	  }, //多语言配置
+	 "aoColumns": [
+	       	    { "sTitle": "Engine" },
+	       	    { "sTitle": "Browser" },
+	       	    { "sTitle": "Platform" },
+	       	    { "sTitle": "Version", "sClass": "center" },
+	       	    {
+	       	        "sTitle": "Grade",
+	       	        "sClass": "center",
+	       	        "fnRender": function(obj) {
+	       	            var sReturn = obj.aData[ obj.iDataColumn ];
+	       	            if ( sReturn == "A" ) {
+	       	                sReturn = "<b>A</b>";
+	       	                }
+	       	                return sReturn;
+	       	            }
+	       	        }
+	       	    ]
+	,
+	"aaData": [
+	    /* Reduced data set */
+	    [ "Trident", "Internet Explorer 4.0", "Win 95+", 4, "X" ],
+	    [ "Trident", "Internet Explorer 5.0", "Win 95+", 5, "C" ],
+	    [ "Trident", "Internet Explorer 5.5", "Win 95+", 5.5, "A" ],
+	    [ "Trident", "Internet Explorer 6.0", "Win 98+", 6, "A" ],
+	    [ "Trident", "Internet Explorer 7.0", "Win XP SP2+", 7, "A" ],
+	    [ "Gecko", "Firefox 1.5", "Win 98+ / OSX.2+", 1.8, "A" ],
+	    [ "Gecko", "Firefox 2", "Win 98+ / OSX.2+", 1.8, "A" ],
+	    [ "Gecko", "Firefox 3", "Win 2k+ / OSX.3+", 1.9, "A" ],
+	    [ "Webkit", "Safari 1.2", "OSX.3", 125.5, "A" ],
+	    [ "Webkit", "Safari 1.3", "OSX.3", 312.8, "A" ],
+	    [ "Webkit", "Safari 2.0", "OSX.4+", 419.3, "A" ],
+	    [ "Webkit", "Safari 3.0", "OSX.4+", 522.1, "A" ]
+	]
+}
+        ]]>
+    </configuration>
+    <!--属性定义html -->
+    <attributes>
+        <![CDATA[
+           <fieldSet>
+                <legend>属性</legend>
+                <form id="attrs">
+                    <table>
+                        <tr><td nowrap>标题：</td><td><input id='title' name='title'/></td></tr>
+                    </table>
+                </form>
+            </fieldSet>
+            <fieldSet>
+                <legend>数据服务</legend>
+                <form id="dataservice">
+                    <table>
+                        <tr><td nowrap>服务：</td><td><input id='dataserviceName' name='dataserviceName' readOnly='true' onclick="WidgetUtil.chooseDataservice()"/></td></tr>
+                        <tr><td nowrap>显示列：</td><td><select id="series" name='series' disabled="disabled" multiple="true" size="5"></select></td></tr>
+                    </table>
+                </form>
+            </fieldSet>
+        ]]>
+    </attributes>
+</chart>

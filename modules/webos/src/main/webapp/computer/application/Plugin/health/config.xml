@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<add key="src" value="http://192.168.1.158:801/"></add>
+	<add key="size" value="0"></add>
+	<add key="width" value="1020px"></add>
+	<add key="height" value="600px"></add>
+</applicationConfig>

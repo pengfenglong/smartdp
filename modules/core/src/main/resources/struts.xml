@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="messages"/>
+	<constant name="struts.locale" value="zh_CN"/>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.multipart.maxSize" value="1000000000" />
+	<package name="struts-smartdp" extends="json-default" namespace="/">
+	    <interceptors>   
+            <interceptor name="exceptionInterceptor" class="com.smartdp.core.web.interceptor.ExceptionInterceptor"></interceptor>   
+            <interceptor-stack name="smartdpStack">   
+                <interceptor-ref name="exceptionInterceptor"></interceptor-ref>  
+                <interceptor-ref name="defaultStack"></interceptor-ref> 
+            </interceptor-stack>   
+        </interceptors>   
+        <default-interceptor-ref name="smartdpStack"></default-interceptor-ref>  
+        <action name="*-*-*" class="{1}-{3}Action" method="{2}"> 
+        	<result type="json" name="success">
+        		<param name="root">result</param>
+        	</result> 
+        	<result type="json" name="error">
+        		<param name="root">result</param>
+        	</result> 
+   		</action>
+    </package>
+	<!-- 用于零配置CRUD Action的parent package 
+	<constant name="struts.convention.default.parent.package" value="crud-default" />
+	<constant name="struts.convention.package.locators" value="web" />
+	<constant name="struts.convention.package.locators.basePackage" value="" />
+	<package name="crud-default" extends="convention-default">
+		<interceptors>
+			<interceptor-stack name="crudStack">
+				<interceptor-ref name="store">
+					<param name="operationMode">AUTOMATIC</param>
+				</interceptor-ref>
+				<interceptor-ref name="paramsPrepareParamsStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="crudStack" />
+	</package>
+	-->
+	<include file="struts-default.xml"></include>
+	<include file="struts-plugin.xml"></include>
+	<include file="struts-cms.xml"></include>
+	<include file="struts-weixin.xml"></include>
+	<include file="struts-webos.xml"></include>
+	<include file="struts-*.xml"></include>
+</struts>

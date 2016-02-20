@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.smartdp.platform.model">
+	<class name="Privilege" table="platform_privilege">
+
+		<id name="privilegeId" column="PRIVILEGE_ID" type="java.lang.Long">
+			<generator class="increment" />
+		</id>
+
+		<property name="roleId" column="ROLE_ID" update="true"
+			insert="true" type="java.lang.Long" not-null="false" unique="false"
+			length="19" />
+
+		<property name="resourceId" column="RESOURCE_ID" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<property name="privilegeType" column="PRIVILEGE_TYPE"
+			update="true" insert="true" type="java.lang.String" not-null="false"
+			unique="false" length="10" />
+
+
+	</class>
+</hibernate-mapping>
+

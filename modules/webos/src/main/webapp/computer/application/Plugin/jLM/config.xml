@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<add key="src" value="application/Plugin/jLM/service/body.html"></add>
+	<add key="size" value="1"></add>
+	<add key="title" value="jLMessage"></add>
+	<add key="bodyBG" value=""></add>
+	<add key="minWidth" value="290"></add>
+	<add key="minHeight" value="450"></add>
+	<add key="margin" value="auto 30px"></add>
+	<add key="width" value="280px"></add>
+	<add key="height" value="80%"></add>
+</applicationConfig>

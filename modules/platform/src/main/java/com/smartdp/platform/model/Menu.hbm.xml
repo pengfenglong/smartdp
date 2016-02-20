@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.smartdp.platform.model">
+    <class name="Menu" table="menu">
+
+        <id name="id" column="id" type="java.lang.String">
+            <generator class="increment"/>
+        </id>
+		
+		
+		
+		<property 
+			name="name" 
+			column="name" 
+			update="true"
+            insert="true"
+            type="java.lang.String"
+			not-null="false" 
+			unique="false" 
+			length="255"/>
+		
+		<property 
+			name="parentId" 
+			column="parent_id" 
+			update="true"
+            insert="true"
+            type="java.lang.String"
+			not-null="false" 
+			unique="false" 
+			length="255"/>
+		
+		<!-- One-To-Many attributes -->
+
+		<!-- Many-To-One attributes -->
+
+		<!-- Many-To-Many attributes -->
+    </class>
+</hibernate-mapping>
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)http://weixapp.com/weixin/index.php?app=store&id=5&act=search&cate_id=26#mp.weixin.qq.com -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport"
+	content="width=device-width,minimum-scale=1,user-scalable=no,maximum-scale=1,initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title></title>
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<script src="./js/tools.js" type="text/javascript"></script>
+<link rel="stylesheet" href="./css/site.css">
+</head>
+<body screen_capture_injected="true">
+	<div id="page">
+		<div id="header" class="bgcolor">
+			<a id="return" class="left" href="javascript:history.go(-1);"></a> <span
+				class="title"><a
+				href="http://weixapp.com/weixin/index.php?app=store&id=5#mp.weixin.qq.com"
+				style="color: #fff;"></a></span> <a id="menu" href="./index.html?site=1"
+				class="right"><img src="./image/list.png"></a>
+		</div>
+		<div id="container">
+			<div class="menulist">
+			<!-- 
+				<a
+					href="http://weixapp.com/weixin/index.php?app=articles&id=339#mp.weixin.qq.com"
+					class="menu">
+					<div class="img">
+						<img src="./微应用宝_files/201310231430117370.jpg" sf_validated="1">
+					</div>
+					<h2>支付宝新版钱包开放公众账号</h2>
+					<p class="summary"></p>
+				</a> <a
+					href="http://weixapp.com/weixin/index.php?app=articles&id=338#mp.weixin.qq.com"
+					class="menu">
+					<div class="img">
+						<img src="./微应用宝_files/201310251554232875.jpg">
+					</div>
+					<h2>律师团微信公众账号开通</h2>
+					<p class="summary"></p>
+				</a> <a
+					href="http://weixapp.com/weixin/index.php?app=articles&id=337#mp.weixin.qq.com"
+					class="menu">
+					<div class="img">
+						<img src="./微应用宝_files/201310231419215300.jpg" sf_validated="1">
+					</div>
+					<h2>阿里来往公众账号即将开放</h2>
+					<p class="summary"></p>
+				</a> 
+				 -->
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var site = $.getUrlParam('site');
+	var channel = $.getUrlParam('channel');
+	var contextPath = $.getContextPath();
+	$.ajax({
+		//url:contextPath+'/cmsdata/'+site+'/articles-'+channel+'.json',
+		url:contextPath+'/api/cms/list_article_by_channel.action?channelId='+channel+'&page=1&rows=100000',
+		success:function(d){
+			var data = d.rows;
+			for(var i=0;i<data.length;i++){
+				var s = [];
+				s.push('<a class="menu" href="./article.html?article='+data[i].id+'"><div class="img"><img src="./image/1.jpg"></div>');
+				s.push('<h2>'+data[i].title+'</h2><p class="summary">'+data[i].description+'</p></a>');
+				$('.menulist').append(s.join(''));
+			}
+		}
+	});
+</script>
+</html>

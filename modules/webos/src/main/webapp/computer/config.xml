@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<id>application</id>
+	<name>应用管理</name>
+	<catalog>sys</catalog>
+	<ico>Applications/Aero WinFlip 3D.png</ico>
+	<explain>2012-08-14 08:48:10</explain>
+	<verify>0</verify>
+	<href>page/application/index.jsp</href>
+	<fullScreen>1</fullScreen>
+	<size>1</size>
+	<width>1000px</width>
+	<height>800px</height>
+	<minWidth>300px</minWidth>
+	<minHeight>200px</minHeight>
+	<bodyBG></bodyBG>
+	<margin></margin>
+</applicationConfig>

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>山寨版网页连连看</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="lianliankan.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="JavaScript" src="javascript/jquery-1.6.2.min.js" charset="utf-8" ></script>
+<script type="text/javascript" language="JavaScript" src="plugins/sort-left.js" charset="utf-8" ></script>
+<script type="text/javascript" language="JavaScript" src="plugins/sort-down.js" charset="utf-8" ></script>
+<script type="text/javascript" language="JavaScript" src="plugins/sort-right.js" charset="utf-8" ></script>
+<script type="text/javascript" language="JavaScript" src="plugins/sort-up.js" charset="utf-8" ></script>
+<script type="text/javascript" language="JavaScript" src="javascript/map-main.js" charset="utf-8" ></script>
+
+<script type="text/javascript" language="JavaScript">
+$(function(){
+	var $map=$("#gameMap"),
+		$next=$("#next"),
+		$result=$("#result"),
+		$replay=$("#replay"),
+		$gameTitle=$("#gameTitle");
+	var successHandle = function(levelInfo){
+		$result.hide();
+		$next.hide();
+		$replay.hide();
+		$map.fadeOut("normal",function(){
+			if(levelInfo.nextIndex){
+				$next.show().click(function(){
+					$result.fadeOut("normal",function(){
+						replay(levelInfos[levelInfo.nextIndex]);
+					});
+				});
+			}else{
+				$gameTitle.show();
+			}
+			$result.fadeIn("normal");
+		});
+	};
+	var levelInfos=[
+		{name:"第一关 练手",iLines:6,iColumns:4,nextIndex:1,successHandle :successHandle},
+		{name:"第二关 重力",iLines:8,iColumns:6,nextIndex:2,successHandle :successHandle,plugins:[sort_down_plugin]},
+		{name:"第三关 飓风",iLines:8,iColumns:6,nextIndex:3,successHandle :successHandle,plugins:[sort_down_plugin,sort_left_plugin]},
+		{name:"第四关 眩晕",iLines:10,iColumns:8,successHandle :successHandle,plugins:[sort_right_plugin,sort_down_plugin,sort_left_plugin,sort_up_plugin]}
+	];
+	
+	$result.hide();
+	$replay.hide();
+	var currentLevel=null,levelIndex;
+	var replay=function(levelInfo){
+		$map.fadeOut("normal",function(){
+			$map.empty().fadeIn("normal").llk(levelInfo);
+		});
+	}
+	for(levelIndex in levelInfos){
+		var levelInfo = levelInfos[levelIndex];
+		var $li=$("<li/>"),$a=$("<a href='#'>"+levelInfo.name+"</a>");
+		$a.data("info",levelInfo);
+		$a.click(function(){
+			var levelInfo = $(this).data("info");
+			currentLevel=levelInfo;
+			replay(levelInfo);
+			$replay.click(function(){
+				replay(currentLevel);
+			});
+			$replay.show();
+			$gameTitle.hide();
+		});
+		$li.html($a);
+		$gameTitle.append($li);
+	}
+
+	/*var mapInfo={
+			iLines : 10,
+			iColumns : 8,
+			debugHandle : function(oIconMap,iLines,iColumns){
+				var msg="";
+				for(var i=0;i<=iLines+1;i++){
+					for(var j=0;j<=iColumns+1;j++){
+						msg+=oIconMap[i][j];
+						msg+=" | ";
+					}
+					msg+="<br/>"
+				}
+				$("#test").html(msg);
+			},
+			plugins:[]
+	};
+	$("#gameMap").llk(mapInfo);
+	$("#replay").click(function(){
+		$("#gameMap").empty().llk(mapInfo);
+	});*/
+});
+</script>
+</head>
+<body>
+<ul id="gameTitle">
+</ul>
+<div id="gameMap"></div>
+<div id="toolbar"><input type="button" value="replay" id="replay"/></div>
+<div id="result">恭喜你，成功了！<input id="next" value="下一关" type="button"/></div>
+<div id="test"></div>
+</body>
+</html>

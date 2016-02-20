@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+    
+    
+        <id>column-stacked</id>
+        <!--分类-->
+        <catalog>图形</catalog>
+        <!--类型 -->
+        <type>hightcharts</type>
+        <!--子类型-->
+        <subType>column-stacked</subType>
+        <!--名字-->
+        <name>堆积图</name>
+        <!--宽度 -->
+        <widthScale>1</widthScale>
+        <!--高度-->
+        <heightScale>1</heightScale>
+        <!--图标路径-->
+        <icon>duijitu.jpg</icon>
+    
+    <!--hightcharts配置信息(基于freemark) -->
+    <configuration>
+        <![CDATA[
+        {
+	chart: {
+		renderTo: 'container',
+		defaultSeriesType: 'column'
+	},
+	title: {
+		text: 'Stacked column chart'
+	},
+	xAxis: {
+		categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+	},
+	yAxis: {
+		min: 0,
+		title: {
+			text: 'Total fruit consumption'
+		},
+		stackLabels: {
+			enabled: true,
+			style: {
+				fontWeight: 'bold',
+				color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+			}
+		}
+	},
+	legend: {
+		align: 'center',
+		verticalAlign: 'bottom',
+		floating: false,
+		backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColorSolid) || 'white',
+		borderColor: '#CCC',
+		borderWidth: 1,
+		shadow: false
+	},
+	tooltip: {
+		formatter: function() {
+			return '<b>'+ this.x +'</b><br/>'+
+				 this.series.name +': '+ this.y +'<br/>'+
+				 'Total: '+ this.point.stackTotal;
+		}
+	},
+	plotOptions: {
+		column: {
+			stacking: 'normal',
+			dataLabels: {
+				enabled: true,
+				color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+			}
+		}
+	},
+    series: [{
+		name: 'John',
+		data: [5, 3, 4, 7, 2]
+	}, {
+		name: 'Jane',
+		data: [2, 2, 3, 2, 1]
+	}, {
+		name: 'Joe',
+		data: [3, 4, 4, 2, 5]
+	}]
+}
+        ]]>
+    </configuration>
+    <!--属性定义html -->
+    <attributes>
+        <![CDATA[
+            <fieldSet>
+                <legend><h3>属性</h3></legend>
+                <form id="attrs">
+                    <table>
+                        <tr><td nowrap>标题：</td><td><input id='title' name='title'/></td></tr>
+                        <tr><td nowrap>副标题：</td><td><input id='subtitle' name='subtitle'/></td></tr>
+                        <tr><td nowrap>x轴名称：</td><td><input id='xAxisTitle' name='xAxisTitle'/></td></tr>
+                        <tr><td nowrap>Y轴名称：</td><td><input id='yAxisTitle' name='yAxisTitle'/></td></tr>
+                    </table>
+                </form>
+            </fieldSet>
+            <fieldSet>
+                <legend><h3>数据服务</h3></legend>
+                <form id="dataservice">
+                    <table>
+                        <tr><td nowrap>服务：</td><td><input id='dataserviceName' name='dataserviceName' readOnly='true' onclick="WidgetUtil.chooseDataservice()"/></td></tr>
+                        <tr><td nowrap>x轴分类：</td><td><select id="categories" name="categories" disabled="disabled" multiple="false" size="5"></select></td></tr>
+                        <tr><td nowrap>y轴系列：</td><td><select id="series" name='series' disabled="disabled" multiple="true" size="5"></select></td></tr>
+                    </table>
+                </form>
+            </fieldSet>
+        ]]>
+    </attributes>
+</chart>

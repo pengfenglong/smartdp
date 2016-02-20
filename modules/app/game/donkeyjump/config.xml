@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<id>donkeyjump</id>
+	<name>驴子跳</name>
+	<catalog>game</catalog>
+	<ico></ico>
+	<explain>2012-08-14 08:48:10</explain>
+	<verify>0</verify>
+	<href>index.html</href>
+	<fullScreen>1</fullScreen>
+	<size>0</size>
+	<width>578px</width>
+	<height>603px</height>
+	<minWidth>578px</minWidth>
+	<minHeight>603px</minHeight>
+	<bodyBG></bodyBG>
+	<margin></margin>
+
+</applicationConfig>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<!-- 应用ID -->
+	<id>platform</id>
+	<!-- 应用名称 -->
+	<name>平台管理</name>
+	<!-- 应用分类-->
+	<catalog>sys</catalog>
+	<!-- 应用图片:为空则默认big.png-->
+	<ico>System Icons/Administrative Tools.png</ico>
+	<!-- 应用创建时间-->
+	<explain>2012-08-14 08:48:10</explain>
+	<!-- 是否需要登录-->
+	<verify>0</verify>
+	<!-- 打开模式(window新窗口 dialog弹出框)-->
+	<mode>window</mode>
+	<!-- 应用地址-->
+	<href>page/index.jsp</href>
+	<!-- 应用窗口是否全屏 1为全屏-->
+	<fullScreen>0</fullScreen>
+	<!-- 应用大小-->
+	<size>1</size>
+	<!-- 应用窗口宽度-->
+	<width>1000px</width>
+	<!-- 应用窗口高度-->
+	<height>603px</height>
+	<!-- 应用窗口最小宽度-->
+	<minWidth>578px</minWidth>
+	<!-- 应用窗口最小高度-->
+	<minHeight>603px</minHeight>
+	<!-- 应用窗口背景-->
+	<bodyBG></bodyBG>
+	<margin></margin>
+
+</applicationConfig>

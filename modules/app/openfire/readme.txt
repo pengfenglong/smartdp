@@ -1,0 +1,1 @@
+-DopenfireHome="${workspace_loc:openfire}/target/openfire"

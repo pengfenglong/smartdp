@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<application>
+	<shortcut>
+		<!--<app id="jLMessage" name="jLMessage" ico="application/Plugin/jLM/big.png" config="application/Plugin/jLM/config.xml" verify="1"></app>-->
+		<app id="application"></app>
+		<app id="platform"></app>
+		<app id="im"></app>
+	</shortcut>
+	<screen>
+		<applist>
+			<app id="renju"></app>
+			<app id="SuperMary"></app>
+			<app id="qqMusic"></app>
+			<app id="w3school"></app>
+			<app id="jqueryAPI"></app>
+			<app id="brower"></app>
+		</applist>
+	</screen>
+	<screen>
+		<applist>
+		</applist>
+	</screen>
+	<screen>
+		<applist>	
+		</applist>
+	</screen>
+	<screen>
+		<applist>
+		</applist>
+	</screen>
+	<screen>
+		<applist>
+		</applist>
+	</screen>
+</application>

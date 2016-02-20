@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.smartdp.platform.model">
+	<class name="Group" table="platform_group">
+
+		<id name="groupId" column="GROUP_ID" type="java.lang.Long">
+			<generator class="increment" />
+		</id>
+
+		<property name="groupSimpleName" column="GROUP_SIMPLE_NAME"
+			update="true" insert="true" type="java.lang.String" not-null="false"
+			unique="false" length="10" />
+
+		<property name="groupFullName" column="GROUP_FULL_NAME"
+			update="true" insert="true" type="java.lang.String" not-null="false"
+			unique="false" length="60" />
+
+		<property name="groupCode" column="GROUP_CODE" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="10" />
+
+		<property name="groupAddress1" column="GROUP_ADDRESS1"
+			update="true" insert="true" type="java.lang.String" not-null="false"
+			unique="false" length="100" />
+
+		<property name="groupAddress2" column="GROUP_ADDRESS2"
+			update="true" insert="true" type="java.lang.String" not-null="false"
+			unique="false" length="100" />
+
+		<property name="groupTel1" column="GROUP_TEL1" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="25" />
+
+		<property name="groupTel2" column="GROUP_TEL2" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="25" />
+
+		<property name="groupBeginDate" column="GROUP_BEGIN_DATE"
+			update="true" insert="true" type="java.sql.Date" not-null="false"
+			unique="false" length="10" />
+
+		<property name="groupType" column="GROUP_TYPE" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<property name="groupFax" column="GROUP_FAX" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<property name="groupPostal" column="GROUP_POSTAL" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="6" />
+
+		<property name="groupLegal" column="GROUP_LEGAL" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="20" />
+
+		<property name="groupTaxNo" column="GROUP_TAX_NO" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="25" />
+
+		<property name="groupRegNo" column="GROUP_REG_NO" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="25" />
+
+		<property name="groupBelongDist" column="GROUP_BELONG_DIST"
+			update="true" insert="true" type="java.lang.Long" not-null="false"
+			unique="false" length="19" />
+
+		<property name="groupParent" column="GROUP_PARENT" update="true"
+			insert="true" type="java.lang.Long" not-null="false" unique="false"
+			length="19" />
+
+		<property name="status" column="STATUS" update="true" insert="true"
+			type="java.lang.String" not-null="true" unique="false" length="15" />
+
+		<property name="memo" column="MEMO" update="true" insert="true"
+			type="java.lang.String" not-null="false" unique="false" length="100" />
+
+		<property name="creator" column="CREATOR" update="true"
+			insert="true" type="java.lang.String" not-null="false" unique="false"
+			length="15" />
+
+		<property name="createDate" column="CREATE_DATE" update="true"
+			insert="true" type="java.sql.Timestamp" not-null="true" unique="false"
+			length="19" />
+
+		<set name="roles" table="platform_group_role_ref" lazy="false" inverse="false"
+			cascade="save-update">
+			<key column="GROUP_ID" />
+			<many-to-many column="ROLE_ID" class="com.smartdp.platform.model.Role" />
+		</set>
+
+		<set name="users" table="platform_group_user_ref" lazy="false" inverse="true"
+			cascade="save-update">
+			<key column="GROUP_ID" />
+			<many-to-many column="USER_ID" class="com.smartdp.platform.model.User" />
+		</set>
+
+
+	</class>
+</hibernate-mapping>
+

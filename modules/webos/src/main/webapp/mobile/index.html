@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>pengfenglong</title>
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta charset="utf-8" />
+	<!--<link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
+	<link href="css/main.css"  rel="stylesheet" type="text/css" />
+	<link href="apps/navigation/css/main.css"  rel="stylesheet" type="text/css" />
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/sha1.js" type="text/javascript"></script>
+	<script src="js/tools.js" type="text/javascript"></script>
+	<script src="js/database.js" type="text/javascript"></script>
+	<script src="apps/navigation/js/main.js" type="text/javascript"></script>
+	<script>
+		//用户id
+		var uid = $.getUrlParam('uid');
+        if(uid == null){
+        	uid = 'guest';
+        }
+	</script>
+</head>
+<body screen_capture_injected="true" style="overflow-y:hidden;">
+	<div id="container_home" style="overflow-y:auto;"></div>
+	<div id="container_other" style="overflow-y:auto;"></div>
+	<div id="navigation"></div>
+</body>
+</html>

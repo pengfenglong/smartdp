@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+
+	<body>
+
+	</body>
+	<script src="common/pframe/js/pframe.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	
+		//继承超级父类，生成个子类Animal，并且混入一些方法。这些方法会到Animal的原型上。
+		//另外这边不仅支持混入{}，还支持混入Function
+		var Animal = Class.extend({
+			init : function (opts) {
+				this.msg = opts.msg
+					this.type = "animal"
+			},
+			say : function () {
+				alert(this.msg + ":i am a " + this.type)
+			}
+		})
+
+		//继承Animal，并且混入一些方法
+		var Dog = Animal.extend({
+			init : function (opts) {
+				//并未实现super方法，直接简单使用父类原型调用即可
+				Animal.prototype.init.call(this, opts)
+				//修改了type类型
+				this.type = "dog"
+			}
+		})
+
+		//new Animal({msg:'hello'}).say()
+
+		new Dog({
+			msg : 'hi'
+		}).say()
+	
+	</script>
+
+</html>

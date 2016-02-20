@@ -1,0 +1,3 @@
+$(function(){
+	WidgetUtil.showWidgetToBody(pageInfo);
+});

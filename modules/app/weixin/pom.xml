@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.smartdp</groupId>
+		<artifactId>smartdp-mvn-parent</artifactId>
+		<relativePath>../mvnscript/pom.xml</relativePath>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>smartdp-weixin</artifactId>
+	<packaging>war</packaging>
+	<name>weixin</name>
+	<dependencies>
+		<dependency>
+			<groupId>com.smartdp</groupId>
+			<artifactId>smartdp-core</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.smartdp</groupId>
+			<artifactId>smartdp-framework</artifactId>
+			<type>war</type>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.3.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.15</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		
+	</dependencies>
+</project>

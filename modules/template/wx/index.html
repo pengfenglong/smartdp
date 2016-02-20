@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <meta name="apple-itunes-app" content="app-id=425349261">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>pengfenglong</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+    .newsPage > li {line-height: 35px;height:35px;}
+    .newsPage > li > a, .newsPage > li > a:visited {height: 35px;}
+    .logoBar{background-image:none;border-left:1px solid #790404;}
+    .newsPage.hideMore>li:nth-child(n+9){display:none;}
+    .topNews, .photos, .photo, body > footer{display: block;}
+    .ad {height:35px;}
+    .ad a, .ad a:visited {float:left;font-size:16px;display:block;height:35px;line-height:35px;margin-left:4%;}
+    </style>
+    <script src="./js/jquery.min.js" type="text/javascript"></script>
+    <script>
+
+	function formatDate(date, fmt) {
+	    function pad(value) {
+	        return (value.toString().length < 2) ? '0' + value : value;
+	    }
+	    return fmt.replace(/%([a-zA-Z])/g, function (_, fmtCode) {
+	        switch (fmtCode) {
+	        case 'Y':
+	            return date.getFullYear();
+	        case 'M':
+	            return pad(date.getMonth() + 1);
+	        case 'd':
+	            return pad(date.getDate());
+	        case 'H':
+	            return pad(date.getHours());
+	        case 'm':
+	            return pad(date.getMinutes());
+	        case 's':
+	            return pad(date.getSeconds());
+	        default:
+	            throw new Error('Unsupported format code: ' + fmtCode);
+	        }
+	    });
+	}
+	
+	function getContextPath(){
+		if(document.location.toString().indexOf('sinaapp') != -1){
+			return 'http://weixinext.sinaapp.com';
+		}else{
+			var pathName = document.location.pathname;
+		    var index = pathName.substr(1).indexOf("/");
+		    var result = pathName.substr(0,index+1);
+		    return result;
+		}
+		
+	}
+	
+	var begin = 0;
+	var count = 10;
+	function listArticle(){
+		$.ajax({
+			url:getContextPath()+'/api/weixin/list_imgtextmsg.action?begin='+begin+'&count='+count,
+			dataType:'json',
+			async: true, 
+			success:function(data){
+				if(data.item){
+					begin += count;
+					var item = data.item;
+					for(var i=0;i<item.length;i++){
+						var multi_item = item[i].multi_item;
+						for(var j=0;j<multi_item.length;j++){
+							var html = [];
+							html.push('<li class="newsHead">');
+							html.push('    <a target="_bank" href="'+multi_item[j].content_url+'">');
+							html.push('        <img src="'+multi_item[j].cover+'" width="70" height="52">');
+							html.push('        <div>');
+							html.push('            <p class="newsTitle">'+multi_item[j].title+'</p>');
+							html.push('            <p>'+multi_item[j].digest.substr(0,30)+'...</p>');
+							//html.push('             <span class="newsTips">'+item[i].create_time+'</span>');
+							html.push('         </div>');
+							html.push('     </a>');
+							html.push('  </li>');
+							$('#newsListContent').append(html.join(''));
+						}
+						$('.pageBtn').show();
+						$(' .toTop').show();
+				}
+				}else{
+					$('.pageBtn').hide();
+				}
+				
+			}
+		});
+		
+	}
+
+	listArticle();
+</script>
+</head>
+<body screen_capture_injected="true">
+<header>
+    <div class="logoBar" style="padding-left: 5px;">pengfenglong</div>
+    <div class="navBtn" onclick="$('.navArea').toggle();"><span>导航</span><div class="triDown"></div></div>
+    <div class="navArea hide">
+			<nav>
+				<div>
+					<a href="#" class="i-news"><i></i>语音</a>
+					<a href="#" class="i-ent"><i></i>视频</a>
+				</div>
+			</nav>
+		</div>
+</header>
+<article class="topNews">
+    <div class="sBorder"></div>
+    <section style="overflow: hidden;" class="newsList">
+          <ul page="0" class="newsPage" id="newsListContent">
+          </ul>
+        <div class="pageBtn" style="display: none;" onclick="listArticle()">点击查看更多</div>
+         <!-- ad01 -->
+    </section>
+</article>
+<section class="toTop" style="display: none;">
+    <a href="#">回顶部</a> 
+</section>
+
+
+</body></html>

@@ -1,0 +1,25 @@
+/*
+ * index.css
+ * name:xiaojia
+ * email:iatt@qq.com
+ * qq:273142650
+ * time:2012.8.16 9:00 想你了...
+*/
+@charset "utf-8";
+/***-------------------------------------------------------------------***/
+#main{width:100%;height:100%;float:left;}
+#head,#body,#chat-record,#chat-text,#chat-oper{width:100%;height:36px;float:left;}
+#head{background-image:url(images/head-bg.png);height:80px;position:relative;}
+	#head .info{width:100%;height:64px;float:left;}
+	#head .info .head{width:58px;height:58px;float:left;border:solid 1px #a2adba;border-radius:2px;margin:8px;-webkit-box-shadow:0 0 5px #a2adba;-moz-box-shadow:0 0 5px #a2adba;box-shadow:0 0 5px #a2adba;}
+	#head .info .head:hover{border:solid 1px #1ca9ee;-webkit-box-shadow:0 0 5px #1ca9ee;-moz-box-shadow:0 0 5px #1ca9ee;box-shadow:0 0 5px #1ca9ee;}
+	#head .info .head img{width:100%;height:100%;border:0;border-radius:2px;}
+	#head .info .nickname{widht:187px;height:20px;margin:7px 0 0 3px;float:left;}
+	#head .info .nickname input{font-size:12px;font-weight:bold;border:0;background:none;}
+#chat-record{height:250px;background:#f0f0f0;border-top:solid 1px #ccc;width:544px;overflow:auto;}
+#chat-record p{padding-left:10px;}
+#chat-record p.c{font-weight:bold;}
+#chat-text{height:112px;background:#f0f0f0;border-top:solid 1px #ccc;}
+#chat-text textarea{width:100%;height:100%;border:0;}
+#chat-oper{height:20px;text-align:right;}
+#chat-oper button{margin:0 10px;}

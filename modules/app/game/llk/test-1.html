@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>山寨版网页连连看</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="lianliankan.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="JavaScript" src="javascript/jquery-1.3.2.min.js" charset="utf-8" ></script>
+<script type="text/javascript" language="JavaScript" src="plugins/sort-left.js" charset="utf-8" ></script>
+<script type="text/javascript" language="JavaScript" src="plugins/sort-down.js" charset="utf-8" ></script>
+<script type="text/javascript" language="JavaScript" src="plugins/sort-right.js" charset="utf-8" ></script>
+<script type="text/javascript" language="JavaScript" src="plugins/sort-up.js" charset="utf-8" ></script>
+<script type="text/javascript" language="JavaScript" src="javascript/map-main.js" charset="utf-8" ></script>
+<script type="text/javascript" language="JavaScript">
+$(function(){
+	var game1Info={
+			iLines : 4,
+			iColumns : 4
+	};
+	var game2Info={
+		iLines : 4,
+		iColumns : 6,
+		plugins:[sort_right_plugin,sort_down_plugin,sort_left_plugin,sort_up_plugin]
+	}
+	
+	$("#gameMap1").llk(game1Info);
+	$("#replay1").click(function(){
+		$("#gameMap1").empty().llk(game1Info);
+	});
+	
+	$("#gameMap2").llk(game2Info);
+	$("#replay2").click(function(){
+		$("#gameMap2").empty().llk(game2Info);
+	});
+});
+</script>
+</head>
+<body>
+<div id="gameMap1"></div>
+<div id="gameMap2"></div>
+<div id="toolbar">
+	<input type="button" value="replay game 1" id="replay1"/>
+	<input type="button" value="replay game 2" id="replay2"/>
+</div>
+</body>
+</html>

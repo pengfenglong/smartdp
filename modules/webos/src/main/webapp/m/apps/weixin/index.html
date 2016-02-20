@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>微信</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+	</head>
+	<body>
+	dddd
+	</body>
+	<script src="../../common/pframe/js/pframe.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var access_token = 'tJ6Bl5inGdY4q7WIR_KRxwvJCiUNnr_DFhyYSpMY1tnQokdJwmaiLVEfrAVwD79y2iCDUlVWqR7YNox1jJWZj09MVtRBElxPR6yowEVY5RI';
+		var data = {
+   "articles": [
+		 {
+                        "thumb_media_id":"qI6_Ze_6PtV7svjolgs-rN6stStuHIjs9_DidOHaj0Q-mwvBelOXCFZiq2OsIU-p",
+                        "author":"xxx",
+			 "title":"Happy Day",
+			 "content_source_url":"www.qq.com",
+			 "content":"content",
+			 "digest":"digest",
+                        "show_cover_pic":"1"
+		 },
+		 {
+                        "thumb_media_id":"qI6_Ze_6PtV7svjolgs-rN6stStuHIjs9_DidOHaj0Q-mwvBelOXCFZiq2OsIU-p",
+                        "author":"xxx",
+			 "title":"Happy Day",
+			 "content_source_url":"www.qq.com",
+			 "content":"content",
+			 "digest":"digest",
+                        "show_cover_pic":"0"
+		 }
+   ]
+};
+		$.ajax({
+			url:'https://api.weixin.qq.com/cgi-bin/media/uploadnews?access_token='+access_token,
+			type:'post',
+			data:JSON.stringify(data),
+			dataType:'json',
+			success:function(d){
+				console.log(d);
+			}
+		});
+	</script>
+</html>

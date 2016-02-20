@@ -1,0 +1,70 @@
+/*
+ * index.css
+ * name:xiaojia
+ * email:iatt@qq.com
+ * qq:273142650
+ * time:2012.6.28 14:18 想你了...
+*/
+@charset "utf-8";
+/***-------------------------------------------------------------------***/
+html{height:100%;overflow:hidden;}
+body{font-family:"微软雅黑","宋体";font-size:12px;margin:0;height:100%;overflow:hidden;-moz-user-select:-moz-none;background-color:transparent;}
+input{outline:none;font-family:'微软雅黑';*vertical-align:middle;}
+button{font-family:"微软雅黑","宋体";*vertical-align:middle;}
+textarea{outline:none;resize:none;outline:none;font-family:"微软雅黑";font-size:12px;}
+form,ol,ul,li{list-style-type:none;text-decoration:none;font-size:12px;font-weight:100;font-style:normal;margin:0;padding:0;}
+a{outline:none;}
+img{border:none;}
+/***-------------------------------------------------------------------***/
+.transparent{width:100%;height:100%;background:url(images/transparent.png);position:absolute;top:0;left:0;z-index:2;}
+#masks{width:100%;height:100%;position:absolute;top:0;left:0;z-index:10000;background:#000;opacity:0.5;filter:alpha(opacity=50);}
+/***-------------------------------------------------------------------***/
+.ico{float:left;margin:3px;}
+.ico img{width:15px;height:15px;}
+/***-------------------------------------------------------------------***/
+#main{width:100%;height:100%;float:left;background-image:url(images/head-bg.png);}
+#head,#label,#body,#bottom{width:100%;height:36px;float:left;}
+#head .head-oper{width:76px;float:left;}
+	.back,.next,.home-page,.favorites,.tools,.search,.refresh,.Esc,.close{float:left;background:url(images/button-bg.png) no-repeat;cursor:default;}
+	.head-oper .back{width:41px;height:36px;background-position:-90px -199px;}
+	.head-oper .back:hover{background-position:-12px -201px;}
+	.head-oper .back:active{background-position:-168px -199px;}
+	.head-oper .next{width:35px;height:35px;margin-top:1px;background-position:-153px -68px;}
+	.head-oper .next:hover{background-position:-12px -68px;}
+	.head-oper .next:active{background-position:-83px -68px;}
+/***-------------------------------------------------------------------***/
+#head .address{width:500px;height:21px;border:solid 1px #7f7f7f;float:left;background:#fafafa;margin-top:10px;position:relative;}
+	.address input{height:19px;background:none;border:none;color:#929292;line-height:normal;font-size:12px;}
+	.search,.refresh,.Esc{width:19px;height:19px;position:absolute;top:0;right:0;}
+	.address .search{background-position:-107px -260px;right:40px;}
+	.address .search:hover{background-position:-107px -291px;}
+	.address .refresh{background-position:-106px -320px;right:20px;}
+	.address .refresh:hover{background-position:-106px -347px;}
+	.address .Esc{background-position:-141px -258px;}
+	.address .Esc:hover{background-position:-141px -292px;}
+/***-------------------------------------------------------------------***/
+#head .page-oper{width:80px;float:right;margin-top:11px;}
+	.home-page,.favorites,.tools{width:17px;height:17px;margin:2px 3px 0 5px;}
+	.home-page{background-position:-17px -263px;}
+	.home-page:hover{background-position:-17px -291px;}
+	.home-page:active{background-position:-17px -321px;}
+	.favorites{background-position:-64px -262px;margin-right:2px;}
+	.favorites:hover{background-position:-64px -290px;}
+	.favorites:active{background-position:-64px -320px;}
+	.tools{background-position:-177px -262px;height:18px;}
+	.tools:hover{background-position:-177px -290px;}
+	.tools:active{background-position:-177px -320px;}
+/***-------------------------------------------------------------------***/
+#label{height:24px;border-bottom:solid 1px #54585e;}
+	#label ul{width:100%;height:100%;float:left;}
+	#label ul li{width:200px;height:22px;background:#fff;border:solid 1px #54585e;border-bottom:none;border-left:none;overflow:hidden;float:left;}
+	#label ul li .ico{margin-top:4px;}
+	#label ul li.new{width:28px;background:url(images/newLabel-bg.png);}
+	#label ul li.new:hover{background:url(images/newLabel-bg-hover.png);}
+	#label ul li div.label-title{float:left;height:100%;text-indent:3px;line-height:23px;}
+	#label ul li div.close{float:right;height:100%;width:12px;background-position:-145px -318px;margin-right:3px;}
+	#label ul li div.close:hover{background-position:-145px -338px;}
+/***-------------------------------------------------------------------***/
+#body{background:#fff;}
+/***-------------------------------------------------------------------***/
+#bottom{height:0;font-size:0;}

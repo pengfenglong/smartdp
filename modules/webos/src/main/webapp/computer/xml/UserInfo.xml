@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserInfo>
+
+	<add key="state" value="403"></add>
+
+	<add key="nickname" value="请登陆"></add>
+
+	<add key="defaultScreen" value="0"></add>
+
+	<add key="headImage" value="resources/images/head_2.png"></add>
+
+	<add key="theme" width="2526" height="1050" href="resources/images/theme/theme_7.jpg"></add>
+
+	<add key="search" value="http://www.baidu.com/s?wd="></add>
+
+	<add key="inputMethod" value="javascript:(function(q){q?q.toggle():function(d,j){j=d.createElement('script');j.async=true;j.src='//ime.qq.com/fcgi-bin/getjs';j.setAttribute('ime-cfg','lt=2');d=d.getElementsByTagName('head')[0];d.insertBefore(j,d.firstChild)}(document)})(window.QQWebIME);"></add>
+
+	<add key="applicationList" value="xml/jPushApplicationList.xml"></add>
+
+</UserInfo>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.smartdp.platform.model">
+    <class name="Parameter" table="platform_parameter">
+
+        <id name="paraId" column="paraId" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+		
+		
+		
+		<property 
+			name="createDate" 
+			column="createDate" 
+			update="true"
+            insert="true"
+            type="java.sql.Timestamp"
+			not-null="false" 
+			unique="false" 
+			length="19"/>
+		
+		<property 
+			name="creator" 
+			column="creator" 
+			update="true"
+            insert="true"
+            type="java.lang.String"
+			not-null="false" 
+			unique="false" 
+			length="255"/>
+		
+		<property 
+			name="memo" 
+			column="memo" 
+			update="true"
+            insert="true"
+            type="java.lang.String"
+			not-null="false" 
+			unique="false" 
+			length="255"/>
+		
+		<property 
+			name="paraKeyName" 
+			column="paraKeyName" 
+			update="true"
+            insert="true"
+            type="java.lang.String"
+			not-null="false" 
+			unique="false" 
+			length="255"/>
+		
+		<property 
+			name="paraName" 
+			column="paraName" 
+			update="true"
+            insert="true"
+            type="java.lang.String"
+			not-null="false" 
+			unique="false" 
+			length="255"/>
+		
+		<property 
+			name="paraType" 
+			column="paraType" 
+			update="true"
+            insert="true"
+            type="java.lang.String"
+			not-null="false" 
+			unique="false" 
+			length="255"/>
+		
+		<property 
+			name="paraValue" 
+			column="paraValue" 
+			update="true"
+            insert="true"
+            type="java.lang.String"
+			not-null="false" 
+			unique="false" 
+			length="255"/>
+		
+		<property 
+			name="status" 
+			column="status" 
+			update="true"
+            insert="true"
+            type="java.lang.String"
+			not-null="false" 
+			unique="false" 
+			length="255"/>
+		
+		<!-- One-To-Many attributes -->
+
+		<!-- Many-To-One attributes -->
+
+		<!-- Many-To-Many attributes -->
+    </class>
+</hibernate-mapping>
+
